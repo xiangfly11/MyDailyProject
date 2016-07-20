@@ -17,6 +17,11 @@
 		70A16D431D3E1B7E004BC064 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A16D421D3E1B7E004BC064 /* Photo.m */; };
 		70A16D4C1D3E1F41004BC064 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A16D4A1D3E1F41004BC064 /* PhotoCell.m */; };
 		70A16D4D1D3E1F41004BC064 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A16D4B1D3E1F41004BC064 /* PhotoCell.xib */; };
+		70A16D531D3F256B004BC064 /* DOPNavbarMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A16D501D3F256B004BC064 /* DOPNavbarMenu.m */; };
+		70A16D541D3F256B004BC064 /* UIView+DOPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A16D521D3F256B004BC064 /* UIView+DOPExtension.m */; };
+		70C8B5091D3F324500BA6D80 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C8B5081D3F324500BA6D80 /* PhotoViewController.m */; };
+		70C8B50D1D3F6BA800BA6D80 /* DropDownTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C8B50C1D3F6BA800BA6D80 /* DropDownTransitionController.m */; };
+		70C8B5101D3F8C6600BA6D80 /* InteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C8B50F1D3F8C6600BA6D80 /* InteractionController.m */; };
 		70D935501D2DFBFB0037F73F /* TopButtonsTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D9354F1D2DFBFB0037F73F /* TopButtonsTitle.m */; };
 		70EAA5C71D21132F00E4AA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EAA5C61D21132F00E4AA40 /* main.m */; };
 		70EAA5CA1D21132F00E4AA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EAA5C91D21132F00E4AA40 /* AppDelegate.m */; };
@@ -84,6 +89,16 @@
 		70A16D491D3E1F41004BC064 /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		70A16D4A1D3E1F41004BC064 /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 		70A16D4B1D3E1F41004BC064 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		70A16D4F1D3F256B004BC064 /* DOPNavbarMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPNavbarMenu.h; sourceTree = "<group>"; };
+		70A16D501D3F256B004BC064 /* DOPNavbarMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPNavbarMenu.m; sourceTree = "<group>"; };
+		70A16D511D3F256B004BC064 /* UIView+DOPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DOPExtension.h"; sourceTree = "<group>"; };
+		70A16D521D3F256B004BC064 /* UIView+DOPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DOPExtension.m"; sourceTree = "<group>"; };
+		70C8B5071D3F324500BA6D80 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		70C8B5081D3F324500BA6D80 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		70C8B50B1D3F6BA800BA6D80 /* DropDownTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownTransitionController.h; sourceTree = "<group>"; };
+		70C8B50C1D3F6BA800BA6D80 /* DropDownTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownTransitionController.m; sourceTree = "<group>"; };
+		70C8B50E1D3F8C6600BA6D80 /* InteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionController.h; sourceTree = "<group>"; };
+		70C8B50F1D3F8C6600BA6D80 /* InteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionController.m; sourceTree = "<group>"; };
 		70D9354E1D2DFBFB0037F73F /* TopButtonsTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopButtonsTitle.h; sourceTree = "<group>"; };
 		70D9354F1D2DFBFB0037F73F /* TopButtonsTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopButtonsTitle.m; sourceTree = "<group>"; };
 		70EAA5C21D21132F00E4AA40 /* MyDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +211,7 @@
 		707CAAB91D22A777002CCE9D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70C8B50A1D3F6B4900BA6D80 /* CustomViewControllerTransition */,
 				707CAABA1D22A79E002CCE9D /* NewsNavViewController.h */,
 				707CAABB1D22A79E002CCE9D /* NewsNavViewController.m */,
 				704323D81D333EF3003CCC25 /* NewsViewController.h */,
@@ -210,6 +226,8 @@
 				70F88A641D3CB35800990A29 /* SettingViewController.m */,
 				70F88A661D3CB3E300990A29 /* CustomNavigationViewController.h */,
 				70F88A671D3CB3E300990A29 /* CustomNavigationViewController.m */,
+				70C8B5071D3F324500BA6D80 /* PhotoViewController.h */,
+				70C8B5081D3F324500BA6D80 /* PhotoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +248,28 @@
 				70A16D3F1D3E105F004BC064 /* HMWaterflowLayout.m */,
 			);
 			name = FlowLayout;
+			sourceTree = "<group>";
+		};
+		70A16D4E1D3F2542004BC064 /* DOPNavbarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				70A16D4F1D3F256B004BC064 /* DOPNavbarMenu.h */,
+				70A16D501D3F256B004BC064 /* DOPNavbarMenu.m */,
+				70A16D511D3F256B004BC064 /* UIView+DOPExtension.h */,
+				70A16D521D3F256B004BC064 /* UIView+DOPExtension.m */,
+			);
+			name = DOPNavbarMenu;
+			sourceTree = "<group>";
+		};
+		70C8B50A1D3F6B4900BA6D80 /* CustomViewControllerTransition */ = {
+			isa = PBXGroup;
+			children = (
+				70C8B50B1D3F6BA800BA6D80 /* DropDownTransitionController.h */,
+				70C8B50C1D3F6BA800BA6D80 /* DropDownTransitionController.m */,
+				70C8B50E1D3F8C6600BA6D80 /* InteractionController.h */,
+				70C8B50F1D3F8C6600BA6D80 /* InteractionController.m */,
+			);
+			name = CustomViewControllerTransition;
 			sourceTree = "<group>";
 		};
 		70EAA5B91D21132F00E4AA40 = {
@@ -306,6 +346,7 @@
 		70EAA5FB1D2116DD00E4AA40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70A16D4E1D3F2542004BC064 /* DOPNavbarMenu */,
 				70A16D3D1D3E103E004BC064 /* FlowLayout */,
 				70FACA381D2122EB00536665 /* TopImageView.h */,
 				70FACA391D2122EB00536665 /* TopImageView.m */,
@@ -526,19 +567,24 @@
 				70A16D4C1D3E1F41004BC064 /* PhotoCell.m in Sources */,
 				70F88A561D38C77700990A29 /* TabBarButton.m in Sources */,
 				70FACA441D21255E00536665 /* TopCarouselView.m in Sources */,
+				70C8B5101D3F8C6600BA6D80 /* InteractionController.m in Sources */,
 				70F88A5F1D3CB31A00990A29 /* VideoViewController.m in Sources */,
 				70EAA5D31D21132F00E4AA40 /* MyDaily.xcdatamodeld in Sources */,
 				704323DA1D333EF3003CCC25 /* NewsViewController.m in Sources */,
 				70EAA5CA1D21132F00E4AA40 /* AppDelegate.m in Sources */,
+				70A16D531D3F256B004BC064 /* DOPNavbarMenu.m in Sources */,
 				704323D41D31FD0B003CCC25 /* TopNavScrollBar.m in Sources */,
 				70F88A591D3C804300990A29 /* TabBarView.m in Sources */,
+				70C8B50D1D3F6BA800BA6D80 /* DropDownTransitionController.m in Sources */,
 				70F88A621D3CB33000990A29 /* GalleryViewController.m in Sources */,
 				70A16D401D3E105F004BC064 /* HMWaterflowLayout.m in Sources */,
+				70C8B5091D3F324500BA6D80 /* PhotoViewController.m in Sources */,
 				70F88A501D374B2700990A29 /* NewsTableViewCell.m in Sources */,
 				70A16D431D3E1B7E004BC064 /* Photo.m in Sources */,
 				704323CE1D31F92A003CCC25 /* NSString+Extension.m in Sources */,
 				70F88A681D3CB3E300990A29 /* CustomNavigationViewController.m in Sources */,
 				70FACA3A1D2122EB00536665 /* TopImageView.m in Sources */,
+				70A16D541D3F256B004BC064 /* UIView+DOPExtension.m in Sources */,
 				70D935501D2DFBFB0037F73F /* TopButtonsTitle.m in Sources */,
 				707CAABC1D22A79E002CCE9D /* NewsNavViewController.m in Sources */,
 				707CAAC31D22C6E5002CCE9D /* AFNetworkingTools.m in Sources */,

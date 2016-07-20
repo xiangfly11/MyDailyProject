@@ -20,6 +20,8 @@
     
     CGSize size = [attribute boundingRectWithSize:CGSizeMake(self.frame.size.width - 5, 20) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading  context:nil].size;
     
+//    UIGestureRecognizer *recognizer = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(clickImageView:)];
+//    [self addGestureRecognizer:recognizer];
     CGRect frame = self.titlelabel.frame;
     frame.size.height = size.height;
     self.titlelabel.frame = frame;
@@ -29,5 +31,9 @@
     
     self.titlelabel.textAlignment = NSTextAlignmentCenter;
 }
+
+//-(void) clickImageView:(Photo *) photo {
+//    self.block(photo);
+//}
 
 @end

@@ -126,14 +126,6 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
 -(void) fetchData:(NSDictionary *) object {
     NSArray *response = [TopNewsImage mj_objectArrayWithKeyValuesArray:object[@"T1348647853363"][0][@"ads"]];
     
-//    for (NSDictionary *item in response) {
-//        TopNews *news = [[TopNews alloc] init];
-//        news.title = item[@"title"];
-//        news.imageUrl = item[@"imgsrc"];
-//        news.url = item[@"url"];
-//        [self.topNewsArr addObject:news];
-//    }
-    
     for (TopNewsImage *news in response) {
         [self.topNewsArr addObject:news];
     }
@@ -144,30 +136,6 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
 
 -(void) selectedBtn:(UIButton *) btn {
     NSInteger tag = btn.tag - 200;
-//    switch (tag) {
-//        case 0:
-//            NSLog(@"click %d",0);
-//            break;
-//            
-//        case 1:
-//            NSLog(@"click %d",1);
-//            break;
-//            
-//        case 2:
-//            NSLog(@"click %d",2);
-//            break;
-//            
-//        case 3:
-//            NSLog(@"click %d",3);
-//            break;
-//            
-//        case 4:
-//            NSLog(@"click %d",4);
-//            break;
-//        default:
-//            break;
-//    }
-    
     [self setCurrentItemIndex:tag];
 }
 

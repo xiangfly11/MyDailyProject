@@ -87,7 +87,7 @@
             
             NSInteger i = 0;
             for (HeadlineNews *news in resultArr) {
-                NSLog(@"%ld,%@:%@",i,news.title,news.url_3w);
+//                NSLog(@"%ld,%@:%@",i,news.title,news.url_3w);
                 i++;
                 if (news.url_3w != nil) {
                     [self.newsArr addObject:news];
