@@ -31,14 +31,12 @@
     // 动画过程
     if (toVC.isBeingPresented) {
         toVC.view.frame = CGRectOffset(finalFrame, 0, -finalFrame.size.height);
-        [UIView animateWithDuration:duration
-                         animations:^{
-                             toVC.view.frame = finalFrame;
-                         }
-                         completion:^(BOOL finished) {
-                             // 结束后要通知系统
-                             [transitionContext completeTransition:YES];
-                         }];
+
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:10.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            toVC.view.frame = finalFrame;
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+        }];
     }
     
     if (fromVC.isBeingDismissed) {

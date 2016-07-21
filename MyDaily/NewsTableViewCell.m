@@ -69,8 +69,9 @@
     CGContextFillRect(context, rect);
     
     //下分割线
+//    CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:224.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.8].CGColor);
     CGContextSetStrokeColorWithColor(context, [UIColor lightGrayColor].CGColor);
-    CGContextStrokeRect(context, CGRectMake(0, rect.size.height, rect.size.width, 1));
+    CGContextStrokeRect(context, CGRectMake(10, rect.size.height, rect.size.width - 20, 1));
 }
 
 

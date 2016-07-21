@@ -10,9 +10,11 @@
 #import "HeadlineNews.h"
 #import "NewsTableViewCell.h"
 #import "OtherNews.h"
+#import "NewsDetailViewController.h"
 
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource> {
     NSInteger _page;
+    NSInteger _currentPages;
    
 }
 
@@ -27,14 +29,15 @@
     [super viewDidLoad];
     [self initConfig];
     [self initTableView];
-//    [self setupRefreshView];
-    [self requestData];
+    [self setupRefreshView];
+//    [self requestData];
 }
 
 
 -(void) initConfig {
     _page = 0;
     _newsArr = [NSMutableArray array];
+    _currentPages = 20;
     
 }
 
@@ -43,36 +46,73 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,10, kScreenWidth, kScreenHeight - topCarouselViewHeight - topScrollButtonsViewHeight - navigationBarHeight - 50 ) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+//    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, -50, kScreenWidth, 50)];
+//    [lable setText:@"下拉刷新"];
+//    [self.view addSubview:lable];
+//    [self.tableView.tableHeaderView addSubview:lable];
+    
     
     [self.view addSubview:_tableView];
 }
 
 -(void) setupRefreshView {
-    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(updateData)];
-    header.lastUpdatedTimeLabel.hidden = NO;
-    header.stateLabel.hidden = NO;
-    self.tableView.mj_header = header;
-    [header beginRefreshing];
+
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(requestDataWithControl:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    [refreshControl beginRefreshing];
     
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [self requestDataWithControl:refreshControl];
+    
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
+//    
+//    // Enter the refresh status immediately
+//    [self.tableView.mj_header beginRefreshing];
+    
+    
 }
 
 
--(void) requestData {
+
+//-(void) requestData {
+//    NSString *urlStr;
+//    if (self.content == nil) {
+//        urlStr = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/headline/T1348647853363/%ld-%ld.html",(long)_page,_currentPages];
+//        self.type = headlineNews;
+//    }else {
+//        urlStr = [NSString stringWithFormat:@"http://api.huceo.com/%@/other/?key=c32da470996b3fdd742fabe9a2948adb&num=%ld",self.content,_currentPages];
+//        self.type = otherNews;
+//    }
+//    
+//    
+//    [AFNetworkingTools requestWithType:HttpRequestTypeGet withUrlString:urlStr withParameters:nil withSuccessBlock:^(NSDictionary *object) {
+//        [self fetchData:object withType:self.type];
+////        [control endRefreshing];
+//    } withFailureBlock:^(NSError *error) {
+//        NSLog(@"Error:%@",error.localizedDescription);
+////        [control endRefreshing];
+//    } progress:nil];
+//
+//}
+
+
+-(void) requestDataWithControl:(UIRefreshControl *) control {
     NSString *urlStr;
     if (self.content == nil) {
-        urlStr = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/headline/T1348647853363/%ld-20.html",(long)_page];
+        urlStr = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/headline/T1348647853363/%ld-%ld.html",(long)_page,_currentPages];
         self.type = headlineNews;
     }else {
-        urlStr = [NSString stringWithFormat:@"http://api.huceo.com/%@/other/?key=c32da470996b3fdd742fabe9a2948adb&num=20",self.content];
+        urlStr = [NSString stringWithFormat:@"http://api.huceo.com/%@/other/?key=c32da470996b3fdd742fabe9a2948adb&num=%ld",self.content,_currentPages];
         self.type = otherNews;
     }
     
     
     [AFNetworkingTools requestWithType:HttpRequestTypeGet withUrlString:urlStr withParameters:nil withSuccessBlock:^(NSDictionary *object) {
         [self fetchData:object withType:self.type];
+        [control endRefreshing];
     } withFailureBlock:^(NSError *error) {
         NSLog(@"Error:%@",error.localizedDescription);
+        [control endRefreshing];
     } progress:nil];
     
 }
@@ -110,15 +150,18 @@
     }
     
     [self.tableView reloadData];
-}
-
--(void) updateData {
     
 }
 
--(void) loadMoreData {
-    
-}
+//-(void) updateData {
+//    [self requestData];
+//}
+
+//-(void) loadMoreData {
+//    _currentPages += _currentPages + 10;
+//    [self requestData];
+//    
+//}
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -137,7 +180,11 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HeadlineNews *news = self.newsArr[indexPath.row];
+    NewsDetailViewController *detailViewController = [[NewsDetailViewController alloc] init];
+    detailViewController.news = news;
     
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -69,13 +69,13 @@ static NSString *const headerView = @"headerView";
 
 -(void)setupRefreshView
 {
-    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(updateData)];
-    header.lastUpdatedTimeLabel.hidden = NO;
-    header.stateLabel.hidden = NO;
-    self.collectionVeiw.mj_header = header;
-    [header beginRefreshing];
-    
-    self.collectionVeiw.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+//    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(updateData)];
+//    header.lastUpdatedTimeLabel.hidden = NO;
+//    header.stateLabel.hidden = NO;
+//    self.collectionVeiw.mj_header = header;
+//    [header beginRefreshing];
+//    
+//    self.collectionVeiw.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
 }
 
 

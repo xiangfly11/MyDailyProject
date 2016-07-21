@@ -10,6 +10,7 @@
 		704323CE1D31F92A003CCC25 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 704323CD1D31F92A003CCC25 /* NSString+Extension.m */; };
 		704323D41D31FD0B003CCC25 /* TopNavScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 704323D31D31FD0B003CCC25 /* TopNavScrollBar.m */; };
 		704323DA1D333EF3003CCC25 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 704323D91D333EF3003CCC25 /* NewsViewController.m */; };
+		70535B261D407D5E0048F42A /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B251D407D5E0048F42A /* NewsDetailViewController.m */; };
 		707CAA6A1D223205002CCE9D /* TopNewsImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAA691D223205002CCE9D /* TopNewsImage.m */; };
 		707CAABC1D22A79E002CCE9D /* NewsNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAABB1D22A79E002CCE9D /* NewsNavViewController.m */; };
 		707CAAC31D22C6E5002CCE9D /* AFNetworkingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAAC21D22C6E5002CCE9D /* AFNetworkingTools.m */; };
@@ -74,6 +75,8 @@
 		704323D31D31FD0B003CCC25 /* TopNavScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNavScrollBar.m; sourceTree = "<group>"; };
 		704323D81D333EF3003CCC25 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		704323D91D333EF3003CCC25 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		70535B241D407D5E0048F42A /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		70535B251D407D5E0048F42A /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		707CAA661D223041002CCE9D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		707CAA681D223205002CCE9D /* TopNewsImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNewsImage.h; sourceTree = "<group>"; };
 		707CAA691D223205002CCE9D /* TopNewsImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNewsImage.m; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 				70F88A671D3CB3E300990A29 /* CustomNavigationViewController.m */,
 				70C8B5071D3F324500BA6D80 /* PhotoViewController.h */,
 				70C8B5081D3F324500BA6D80 /* PhotoViewController.m */,
+				70535B241D407D5E0048F42A /* NewsDetailViewController.h */,
+				70535B251D407D5E0048F42A /* NewsDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -571,6 +576,7 @@
 				70F88A5F1D3CB31A00990A29 /* VideoViewController.m in Sources */,
 				70EAA5D31D21132F00E4AA40 /* MyDaily.xcdatamodeld in Sources */,
 				704323DA1D333EF3003CCC25 /* NewsViewController.m in Sources */,
+				70535B261D407D5E0048F42A /* NewsDetailViewController.m in Sources */,
 				70EAA5CA1D21132F00E4AA40 /* AppDelegate.m in Sources */,
 				70A16D531D3F256B004BC064 /* DOPNavbarMenu.m in Sources */,
 				704323D41D31FD0B003CCC25 /* TopNavScrollBar.m in Sources */,
