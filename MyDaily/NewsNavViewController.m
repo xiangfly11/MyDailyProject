@@ -42,6 +42,9 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
 //    [self requestFromServer];
     [self initConfig];
 //    [self viewConfig];
+    
+    //figure out scroll view content offset (-20)
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 

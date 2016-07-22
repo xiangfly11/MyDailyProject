@@ -37,6 +37,8 @@
         _view.frame = self.bounds;
         [self addSubview:_view];
         
+        
+        
         _scrollView.delegate = self;
         
         _pageControl.pageIndicatorTintColor = [UIColor grayColor];
