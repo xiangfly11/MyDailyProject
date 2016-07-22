@@ -13,10 +13,13 @@
 #import "PhotoViewController.h"
 #import "DropDownTransitionController.h"
 #import "InteractionController.h"
+#import "CustomNavigationBar.h"
+
 static NSString *const cellID = @"photoCell";
 static NSString *const headerView = @"headerView";
 
-@interface GalleryViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,HMWaterflowLayoutDelegate,UIViewControllerTransitioningDelegate>
+@interface GalleryViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,HMWaterflowLayoutDelegate,UIViewControllerTransitioningDelegate>{
+}
 
 @property (nonatomic,strong) UICollectionView *collectionVeiw;
 @property (nonatomic,strong) NSMutableArray *itemsArray;
@@ -24,6 +27,7 @@ static NSString *const headerView = @"headerView";
 
 @property (nonatomic,strong) id<UIViewControllerAnimatedTransitioning> animationController;
 @property (nonatomic,strong) InteractionController *interactiveTransition;
+@property (nonatomic,strong) CustomNavigationBar *navBar;
 @end
 
 @implementation GalleryViewController
@@ -48,6 +52,12 @@ static NSString *const headerView = @"headerView";
     _itemsArray = [NSMutableArray array];
     _animationController = [DropDownTransitionController new];
     _interactiveTransition = [InteractionController new];
+    self.navigationController.navigationBar.hidden = YES;
+
+//    CustomNavigationBar *navBar = [[CustomNavigationBar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, navigationBarHeight)];
+//    self.navBar = navBar;
+//    [self.view addSubview:navBar];
+    
 }
 
 
@@ -55,7 +65,7 @@ static NSString *const headerView = @"headerView";
     HMWaterflowLayout *flowLayout = [[HMWaterflowLayout alloc] init];
     flowLayout.columnsCount = 2;
     flowLayout.delegate = self;
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
     self.collectionVeiw = collectionView;

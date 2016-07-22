@@ -32,7 +32,7 @@
     if (toVC.isBeingPresented) {
         toVC.view.frame = CGRectOffset(finalFrame, 0, -finalFrame.size.height);
 
-        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:10.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:10.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             toVC.view.frame = finalFrame;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];

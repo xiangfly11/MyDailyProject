@@ -11,6 +11,9 @@
 		704323D41D31FD0B003CCC25 /* TopNavScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 704323D31D31FD0B003CCC25 /* TopNavScrollBar.m */; };
 		704323DA1D333EF3003CCC25 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 704323D91D333EF3003CCC25 /* NewsViewController.m */; };
 		70535B261D407D5E0048F42A /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B251D407D5E0048F42A /* NewsDetailViewController.m */; };
+		70535B291D40C6530048F42A /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B281D40C6530048F42A /* MediaViewController.m */; };
+		70535B2C1D40CACA0048F42A /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B2B1D40CACA0048F42A /* CustomNavigationBar.m */; };
+		70535B301D41B2E20048F42A /* DVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B2F1D41B2E20048F42A /* DVSwitch.m */; };
 		707CAA6A1D223205002CCE9D /* TopNewsImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAA691D223205002CCE9D /* TopNewsImage.m */; };
 		707CAABC1D22A79E002CCE9D /* NewsNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAABB1D22A79E002CCE9D /* NewsNavViewController.m */; };
 		707CAAC31D22C6E5002CCE9D /* AFNetworkingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAAC21D22C6E5002CCE9D /* AFNetworkingTools.m */; };
@@ -77,6 +80,12 @@
 		704323D91D333EF3003CCC25 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		70535B241D407D5E0048F42A /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		70535B251D407D5E0048F42A /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		70535B271D40C6530048F42A /* MediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewController.h; sourceTree = "<group>"; };
+		70535B281D40C6530048F42A /* MediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewController.m; sourceTree = "<group>"; };
+		70535B2A1D40CACA0048F42A /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
+		70535B2B1D40CACA0048F42A /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
+		70535B2E1D41B2E20048F42A /* DVSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSwitch.h; sourceTree = "<group>"; };
+		70535B2F1D41B2E20048F42A /* DVSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSwitch.m; sourceTree = "<group>"; };
 		707CAA661D223041002CCE9D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		707CAA681D223205002CCE9D /* TopNewsImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNewsImage.h; sourceTree = "<group>"; };
 		707CAA691D223205002CCE9D /* TopNewsImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNewsImage.m; sourceTree = "<group>"; };
@@ -194,6 +203,15 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		70535B2D1D41B2CB0048F42A /* ThirdLibs */ = {
+			isa = PBXGroup;
+			children = (
+				70535B2E1D41B2E20048F42A /* DVSwitch.h */,
+				70535B2F1D41B2E20048F42A /* DVSwitch.m */,
+			);
+			name = ThirdLibs;
+			sourceTree = "<group>";
+		};
 		707CAA671D2231C7002CCE9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +251,8 @@
 				70C8B5081D3F324500BA6D80 /* PhotoViewController.m */,
 				70535B241D407D5E0048F42A /* NewsDetailViewController.h */,
 				70535B251D407D5E0048F42A /* NewsDetailViewController.m */,
+				70535B271D40C6530048F42A /* MediaViewController.h */,
+				70535B281D40C6530048F42A /* MediaViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +323,7 @@
 		70EAA5C41D21132F00E4AA40 /* MyDaily */ = {
 			isa = PBXGroup;
 			children = (
+				70535B2D1D41B2CB0048F42A /* ThirdLibs */,
 				704323CB1D31F8FE003CCC25 /* Category */,
 				707CAABD1D22C2C3002CCE9D /* Utilities */,
 				707CAAB91D22A777002CCE9D /* Controllers */,
@@ -370,6 +391,8 @@
 				70A16D491D3E1F41004BC064 /* PhotoCell.h */,
 				70A16D4A1D3E1F41004BC064 /* PhotoCell.m */,
 				70A16D4B1D3E1F41004BC064 /* PhotoCell.xib */,
+				70535B2A1D40CACA0048F42A /* CustomNavigationBar.h */,
+				70535B2B1D40CACA0048F42A /* CustomNavigationBar.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -573,8 +596,10 @@
 				70F88A561D38C77700990A29 /* TabBarButton.m in Sources */,
 				70FACA441D21255E00536665 /* TopCarouselView.m in Sources */,
 				70C8B5101D3F8C6600BA6D80 /* InteractionController.m in Sources */,
+				70535B301D41B2E20048F42A /* DVSwitch.m in Sources */,
 				70F88A5F1D3CB31A00990A29 /* VideoViewController.m in Sources */,
 				70EAA5D31D21132F00E4AA40 /* MyDaily.xcdatamodeld in Sources */,
+				70535B2C1D40CACA0048F42A /* CustomNavigationBar.m in Sources */,
 				704323DA1D333EF3003CCC25 /* NewsViewController.m in Sources */,
 				70535B261D407D5E0048F42A /* NewsDetailViewController.m in Sources */,
 				70EAA5CA1D21132F00E4AA40 /* AppDelegate.m in Sources */,
@@ -583,6 +608,7 @@
 				70F88A591D3C804300990A29 /* TabBarView.m in Sources */,
 				70C8B50D1D3F6BA800BA6D80 /* DropDownTransitionController.m in Sources */,
 				70F88A621D3CB33000990A29 /* GalleryViewController.m in Sources */,
+				70535B291D40C6530048F42A /* MediaViewController.m in Sources */,
 				70A16D401D3E105F004BC064 /* HMWaterflowLayout.m in Sources */,
 				70C8B5091D3F324500BA6D80 /* PhotoViewController.m in Sources */,
 				70F88A501D374B2700990A29 /* NewsTableViewCell.m in Sources */,

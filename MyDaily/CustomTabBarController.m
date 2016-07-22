@@ -13,6 +13,7 @@
 #import "VideoViewController.h"
 #import "GalleryViewController.h"
 #import "SettingViewController.h"
+#import "MediaViewController.h"
 
 @interface CustomTabBarController ()<TabBarViewDelegate>
 
@@ -65,8 +66,8 @@
 -(void) initController {
     NewsNavViewController *newsController = [[NewsNavViewController alloc] init];
     [self setupChildViewController:newsController title:@"新闻" imageName:@"tabbar_news" selectedImage:@"tabbar_news_hl"];
-    GalleryViewController *galleryController = [[GalleryViewController alloc] init];
-    [self setupChildViewController:galleryController title:@"图片" imageName:@"tabbar_picture" selectedImage:@"tabbar_picture_hl"];
+    MediaViewController *mediaController = [[MediaViewController alloc] init];
+    [self setupChildViewController:mediaController title:@"媒体" imageName:@"tabbar_picture" selectedImage:@"tabbar_picture_hl"];
     VideoViewController *videoController = [[VideoViewController alloc] init];
     [self setupChildViewController:videoController title:@"视频" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl" ];
     SettingViewController *settingController = [[SettingViewController alloc] init];
