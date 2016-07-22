@@ -7,7 +7,7 @@
 //
 
 #import "NewsDetailViewController.h"
-#import "HeadlineNews.h"
+#import "NewsModel.h"
 
 @interface NewsDetailViewController ()
 
@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view.
     
     [self initController];
-    [self configController];
+    [self createWebView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +35,7 @@
     
 }
 
--(void) configController {
+-(void) createWebView {
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.news.url]];
     [webView loadRequest:request];

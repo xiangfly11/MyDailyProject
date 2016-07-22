@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TopNewsImage : NSObject
+@interface TopNewsImageModel : NSObject
 
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *url;

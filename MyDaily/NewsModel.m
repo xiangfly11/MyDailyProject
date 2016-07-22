@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Jiaxiang Li. All rights reserved.
 //
 
-#import "HeadlineNews.h"
+#import "NewsModel.h"
 
-@implementation HeadlineNews
+@implementation NewsModel
 
 
 @end

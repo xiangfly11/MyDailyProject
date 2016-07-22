@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self initTabView];
+    [self createTabView];
     [self initController];
     
     
@@ -48,7 +48,7 @@
 }
 
 
--(void) initTabView {
+-(void) createTabView {
     TabBarView *tabBarView = [[TabBarView alloc] init];
     tabBarView.frame = self.tabBar.bounds;
     tabBarView.delegate = self;

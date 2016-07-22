@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Jiaxiang Li. All rights reserved.
 //
 
-#import "Photo.h"
+#import "PhotoModel.h"
 
-@implementation Photo
+@implementation PhotoModel
 
 
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Photo : NSObject
+@interface PhotoModel : NSObject
 
 @property (nonatomic,strong) NSString *imageUrl;
 @property (nonatomic,assign) CGFloat imageWidth;

@@ -7,11 +7,11 @@
 //
 
 #import "PhotoCell.h"
-#import "Photo.h"
+#import "PhotoModel.h"
 @implementation PhotoCell
 
 
--(void) setCellWithPhoto:(Photo *)photo {
+-(void) setCellWithPhoto:(PhotoModel *)photo {
 //    [self.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://b.hiphotos.baidu.com/image/pic/item/908fa0ec08fa513d17b6a2ea386d55fbb2fbd9e2.jpg"] placeholderImage:nil];
     
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:photo.imageUrl] placeholderImage:nil];

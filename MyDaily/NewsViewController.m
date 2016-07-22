@@ -7,9 +7,8 @@
 //
 
 #import "NewsViewController.h"
-#import "HeadlineNews.h"
+#import "NewsModel.h"
 #import "NewsTableViewCell.h"
-#import "OtherNews.h"
 #import "NewsDetailViewController.h"
 
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource> {
@@ -27,14 +26,14 @@
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-    [self initConfig];
-    [self initTableView];
+    [self initController];
+    [self createTableView];
     [self setupRefreshView];
 //    [self requestData];
 }
 
 
--(void) initConfig {
+-(void) initController {
     _page = 0;
     _newsArr = [NSMutableArray array];
     _currentPages = 20;
@@ -42,7 +41,7 @@
 }
 
 
--(void) initTableView {
+-(void) createTableView {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,10, kScreenWidth, kScreenHeight - topCarouselViewHeight - topScrollButtonsViewHeight - navigationBarHeight - 50 ) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -123,10 +122,10 @@
         case headlineNews:
         {
             NSArray *response = object[@"T1348647853363"];
-            NSArray *resultArr = [HeadlineNews mj_objectArrayWithKeyValuesArray:response];
+            NSArray *resultArr = [NewsModel mj_objectArrayWithKeyValuesArray:response];
             
             NSInteger i = 0;
-            for (HeadlineNews *news in resultArr) {
+            for (NewsModel *news in resultArr) {
 //                NSLog(@"%ld,%@:%@",i,news.title,news.url_3w);
                 i++;
                 if (news.url_3w != nil) {
@@ -138,8 +137,8 @@
         case otherNews:
         {
             NSArray *response = object[@"newslist"];
-            NSArray *resultArr = [OtherNews mj_objectArrayWithKeyValuesArray:response];
-            for (HeadlineNews *news in resultArr) {
+            NSArray *resultArr = [NewsModel mj_objectArrayWithKeyValuesArray:response];
+            for (NewsModel *news in resultArr) {
                 [self.newsArr addObject:news];
             }
         }
@@ -180,7 +179,7 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    HeadlineNews *news = self.newsArr[indexPath.row];
+    NewsModel *news = self.newsArr[indexPath.row];
     NewsDetailViewController *detailViewController = [[NewsDetailViewController alloc] init];
     detailViewController.news = news;
     

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HeadlineNews : NSObject
+@interface NewsModel : NSObject
 
 @property (nonatomic,strong) NSString *url_3w;
 @property (nonatomic,strong) NSString *url;

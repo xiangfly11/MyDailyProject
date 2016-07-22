@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class Photo;
+@class PhotoModel;
 
 //typedef void(^ClickImageBlock)(Photo *photo);
 
@@ -17,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titlelabel;
 //@property (strong,nonatomic) ClickImageBlock block;
 
--(void) setCellWithPhoto:(Photo *) photo;
+-(void) setCellWithPhoto:(PhotoModel *) photo;
 
 @end

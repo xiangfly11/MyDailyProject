@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HeadlineNews;
+@class NewsModel;
 
 @interface NewsDetailViewController : UIViewController
 
-@property (nonatomic,strong) HeadlineNews *news;
+@property (nonatomic,strong) NewsModel *news;
 
 @end

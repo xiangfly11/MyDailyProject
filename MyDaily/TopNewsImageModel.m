@@ -6,9 +6,9 @@
 //  Copyright © 2016 Jiaxiang Li. All rights reserved.
 //
 
-#import "TopNewsImage.h"
+#import "TopNewsImageModel.h"
 
-@implementation TopNewsImage
+@implementation TopNewsImageModel
 
 //+(instancetype) sharedInstance {
 //    static TopNews *instance;

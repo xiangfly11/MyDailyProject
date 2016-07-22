@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Photo;
+@class PhotoModel;
 
 @interface PhotoViewController : UIViewController
 
-@property (nonatomic,strong) Photo * photo;
+@property (nonatomic,strong) PhotoModel * photo;
 
 @end

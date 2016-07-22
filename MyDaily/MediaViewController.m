@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view.
     
     [self initController];
-    [self configController];
+    [self createViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +44,7 @@
 }
 
 
--(void) configController {
+-(void) createViews {
     self.navigationController.navigationBar.hidden = YES;
     CustomNavigationBar *navBar = [[CustomNavigationBar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, navigationBarHeight)];
     self.navBar = navBar;
@@ -59,13 +59,8 @@
     [_controllerArray addObject:galleryViewController];
     VideoViewController *videoViewController = [[VideoViewController alloc] init];
     [_controllerArray addObject:videoViewController];
+   
     
-    [self initMainView];
-
-}
-
-
--(void) initMainView {
     _mainView = [[UIScrollView alloc] initWithFrame: CGRectMake(0, navigationBarHeight, kScreenWidth, kScreenHeight - navigationBarHeight)];
     _mainView.pagingEnabled = YES;
     _mainView.showsVerticalScrollIndicator = NO;
@@ -78,8 +73,10 @@
     mainViewController.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     [_mainView addSubview:mainViewController.view];
     [self addChildViewController:mainViewController];
-    
+
 }
+
+
 
 
 -(void) changeViewController:(NSUInteger) index {

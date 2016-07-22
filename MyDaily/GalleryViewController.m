@@ -8,7 +8,7 @@
 
 #import "GalleryViewController.h"
 #import "HMWaterflowLayout.h"
-#import "Photo.h"
+#import "PhotoModel.h"
 #import "PhotoCell.h"
 #import "PhotoViewController.h"
 #import "DropDownTransitionController.h"
@@ -23,7 +23,7 @@ static NSString *const headerView = @"headerView";
 
 @property (nonatomic,strong) UICollectionView *collectionVeiw;
 @property (nonatomic,strong) NSMutableArray *itemsArray;
-@property (nonatomic,strong) Photo *photo;
+@property (nonatomic,strong) PhotoModel *photo;
 
 @property (nonatomic,strong) id<UIViewControllerAnimatedTransitioning> animationController;
 @property (nonatomic,strong) InteractionController *interactiveTransition;
@@ -37,7 +37,7 @@ static NSString *const headerView = @"headerView";
     // Do any additional setup after loading the view.
     
     [self initController];
-    [self initCollectionView];
+    [self createCollectionView];
     [self requestData];
 //    [self setupRefreshView];
 }
@@ -61,7 +61,7 @@ static NSString *const headerView = @"headerView";
 }
 
 
--(void) initCollectionView {
+-(void) createCollectionView {
     HMWaterflowLayout *flowLayout = [[HMWaterflowLayout alloc] init];
     flowLayout.columnsCount = 2;
     flowLayout.delegate = self;
@@ -114,7 +114,7 @@ static NSString *const headerView = @"headerView";
 -(void) fetchData:(NSDictionary *) object {
     NSArray *response = object[@"imgs"];
     for (int i = 0; i < 20; i ++) {
-        Photo *photo = [[Photo alloc] init];
+        PhotoModel *photo = [[PhotoModel alloc] init];
         NSDictionary *result = response[i];
 //        NSLog(@"%@",result);
         
@@ -158,7 +158,7 @@ static NSString *const headerView = @"headerView";
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    Photo *photo = self.itemsArray[indexPath.item];
+    PhotoModel *photo = self.itemsArray[indexPath.item];
     [cell setCellWithPhoto:photo];
     
     return cell;
@@ -168,7 +168,7 @@ static NSString *const headerView = @"headerView";
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    Photo *photo = self.itemsArray[indexPath.item];
+    PhotoModel *photo = self.itemsArray[indexPath.item];
     PhotoViewController *photoVC = [[PhotoViewController alloc] init];
     photoVC.photo = photo;
     photoVC.transitioningDelegate = self;
@@ -183,7 +183,7 @@ static NSString *const headerView = @"headerView";
 
 -(CGFloat) waterflowLayout:(HMWaterflowLayout *)waterflowLayout heightForWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath {
     
-    Photo *photo = self.itemsArray[indexPath.item];
+    PhotoModel *photo = self.itemsArray[indexPath.item];
     return photo.thumbnailHeight / photo.thumbnailWidth *width * 1.5;
 }
 

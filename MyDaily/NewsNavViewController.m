@@ -8,9 +8,9 @@
 
 #import "NewsNavViewController.h"
 #import "TopCarouselView.h"
-#import "TopNewsImage.h"
+#import "TopNewsImageModel.h"
 #import "TopNavScrollBar.h"
-#import "TopButtonsTitle.h"
+#import "TopButtonsTitleModel.h"
 #import "NewsViewController.h"
 
 
@@ -40,7 +40,7 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
 
     
 //    [self requestFromServer];
-    [self initConfig];
+    [self initController];
 //    [self viewConfig];
     
     //figure out scroll view content offset (-20)
@@ -57,7 +57,7 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
     // Dispose of any resources that can be recreated.
 }
 
--(void) initConfig {
+-(void) initController {
     _viewsArray = [[NSMutableArray alloc] init];
     _topButtonTitles = @[@"头条",@"国内",@"国际",@"娱乐",@"体育",@"科技",@"奇闻趣事",@"生活健康"];
     _contentArr = @[@"guonei",@"world",@"huabian",@"tiyu",@"keji",@"qiwen",@"health"];
@@ -66,7 +66,7 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
     [self requestDataWithUrlStr: urlStr];
 }
 
--(void) viewConfig {
+-(void) createTopViews {
     _topCarouselView = [[TopCarouselView alloc] initWithFrame:CGRectMake(0, navigationBarHeight, kScreenWidth, topCarouselViewHeight)];
   
     [_topCarouselView setTopNews:self.topNewsArr];
@@ -74,7 +74,6 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
     
     _topNavScrollBar = [[TopNavScrollBar alloc] initWithFrame:CGRectMake(0, topCarouselViewHeight + navigationBarHeight, kScreenWidth, topScrollButtonsViewHeight)];
     [_topNavScrollBar setupNavScrollBarWithItems:_topButtonTitles];
-//    _topNavScrollBar.delegate = self;
     __weak __typeof(self) weakSelf = self;
     _topNavScrollBar.selectedBlock = ^(UIButton *btn) {
         [weakSelf selectedBtn:btn];
@@ -93,10 +92,10 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
     }
     _subViewControllers = viewsArr;
     
-    [self initMainView];
+    [self createMainView];
 }
 
--(void) initMainView {
+-(void) createMainView {
     _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, topCarouselViewHeight + topScrollButtonsViewHeight + navigationBarHeight, kScreenWidth, kScreenHeight - topCarouselViewHeight - topScrollButtonsViewHeight - navigationBarHeight)];
     _mainView.pagingEnabled = YES;
     _mainView.showsVerticalScrollIndicator = NO;
@@ -127,13 +126,13 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
 
 
 -(void) fetchData:(NSDictionary *) object {
-    NSArray *response = [TopNewsImage mj_objectArrayWithKeyValuesArray:object[@"T1348647853363"][0][@"ads"]];
+    NSArray *response = [TopNewsImageModel mj_objectArrayWithKeyValuesArray:object[@"T1348647853363"][0][@"ads"]];
     
-    for (TopNewsImage *news in response) {
+    for (TopNewsImageModel *news in response) {
         [self.topNewsArr addObject:news];
     }
     
-    [self viewConfig];
+    [self createTopViews];
 
 }
 

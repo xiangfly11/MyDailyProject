@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HeadlineNews.h"
+#import "NewsModel.h"
 
 
 @interface NewsTableViewCell : UITableViewCell
 
 @property (nonatomic,weak) UIImageView *imageIcon;
 @property (nonatomic,strong) UILabel *label;
-@property (nonatomic,strong) HeadlineNews *newsModel;
+@property (nonatomic,strong) NewsModel *newsModel;
 
 +(instancetype) cellWithTableView:(UITableView *) tableView;
--(void) setNewsModel:(HeadlineNews *)newsModel  withType:(NSInteger) type;
+-(void) setNewsModel:(NewsModel *)newsModel  withType:(NSInteger) type;
 @end

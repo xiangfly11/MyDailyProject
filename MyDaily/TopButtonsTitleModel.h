@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TopButtonsTitle : NSObject
+@interface TopButtonsTitleModel : NSObject
 
 @property (nonatomic,strong) NSString *title;
 

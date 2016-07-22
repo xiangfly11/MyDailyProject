@@ -7,7 +7,7 @@
 //
 
 #import "PhotoViewController.h"
-#import "Photo.h"
+#import "PhotoModel.h"
 @interface PhotoViewController ()
 
 @property (nonatomic,strong) UIImageView *imageView;
@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self initImageView];
+    [self createImageView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,7 +30,7 @@
 }
 
 
--(void) initImageView {
+-(void) createImageView {
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:_photo.imageUrl]];
     [self.view addSubview:_imageView];

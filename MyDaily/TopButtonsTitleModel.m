@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Jiaxiang Li. All rights reserved.
 //
 
-#import "TopButtonsTitle.h"
+#import "TopButtonsTitleModel.h"
 
-@implementation TopButtonsTitle
+@implementation TopButtonsTitleModel
 
 @end

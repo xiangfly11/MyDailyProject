@@ -49,7 +49,7 @@
 }
 
 
--(void) setNewsModel:(HeadlineNews *)newsModel  withType:(NSInteger) type {
+-(void) setNewsModel:(NewsModel *)newsModel  withType:(NSInteger) type {
     _newsModel = newsModel;
     
     if (type == 1) {

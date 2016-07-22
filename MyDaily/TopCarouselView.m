@@ -7,7 +7,7 @@
 //
 
 #import "TopCarouselView.h"
-#import "TopNewsImage.h"
+#import "TopNewsImageModel.h"
 #import "TopImageView.h"
 
 
@@ -82,7 +82,7 @@
     UIView *lastTopImageView = nil;
     
     for (int i = 0; i < self.newsArr.count; i++) {
-        TopNewsImage *news = self.newsArr[i];
+        TopNewsImageModel *news = self.newsArr[i];
         TopImageView *topImageView = [TopImageView new];
         [self.scrollView addSubview:topImageView];
         [topImageView.imageView sd_setImageWithURL:[NSURL URLWithString:news.imgsrc]];
