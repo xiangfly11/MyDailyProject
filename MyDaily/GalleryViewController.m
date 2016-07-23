@@ -14,10 +14,11 @@
 #import "DropDownTransitionController.h"
 #import "InteractionController.h"
 #import "CustomNavigationBar.h"
+#import "TopNavScrollBar.h"
 
 static NSString *const cellID = @"photoCell";
 static NSString *const headerView = @"headerView";
-
+static const CGFloat topNavScrollBarHeight = 70;
 @interface GalleryViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,HMWaterflowLayoutDelegate,UIViewControllerTransitioningDelegate>{
 }
 
@@ -28,6 +29,10 @@ static NSString *const headerView = @"headerView";
 @property (nonatomic,strong) id<UIViewControllerAnimatedTransitioning> animationController;
 @property (nonatomic,strong) InteractionController *interactiveTransition;
 @property (nonatomic,strong) CustomNavigationBar *navBar;
+@property (nonatomic,strong) TopNavScrollBar *topNavScrollBar;
+@property (nonatomic,strong) NSArray *topNavItems;
+@property (nonatomic,strong) NSString *colName;
+@property (nonatomic,strong) NSString *tagName;
 @end
 
 @implementation GalleryViewController
@@ -37,7 +42,7 @@ static NSString *const headerView = @"headerView";
     // Do any additional setup after loading the view.
     
     [self initController];
-    [self createCollectionView];
+    [self createViews];
     [self requestData];
 //    [self setupRefreshView];
 }
@@ -49,6 +54,9 @@ static NSString *const headerView = @"headerView";
 
 
 -(void) initController {
+    _topNavItems = @[@"美女",@"明星",@"汽车",@"宠物",@"设计",@"家居",@"婚嫁",@"摄影",@"美食"];
+    _colName = @"美女";
+    _tagName = @"小清新";
     _itemsArray = [NSMutableArray array];
     _animationController = [DropDownTransitionController new];
     _interactiveTransition = [InteractionController new];
@@ -61,11 +69,21 @@ static NSString *const headerView = @"headerView";
 }
 
 
--(void) createCollectionView {
+-(void) createViews {
+    TopNavScrollBar *scrollNavBar = [[TopNavScrollBar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth,topNavScrollBarHeight)];
+    [scrollNavBar setupNavScrollBarWithItems:_topNavItems];
+    __weak typeof(self) weakSelf = self;
+    scrollNavBar.selectedBlock = ^(UIButton *btn) {
+        [weakSelf selectedTopic:btn];
+    };
+    
+    self.topNavScrollBar = scrollNavBar;
+    [self.view addSubview:scrollNavBar];
+    
     HMWaterflowLayout *flowLayout = [[HMWaterflowLayout alloc] init];
     flowLayout.columnsCount = 2;
     flowLayout.delegate = self;
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,topNavScrollBarHeight, kScreenWidth, kScreenHeight - topNavScrollBarHeight) collectionViewLayout:flowLayout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
     self.collectionVeiw = collectionView;
@@ -99,7 +117,8 @@ static NSString *const headerView = @"headerView";
 }
 
 -(void) requestData {
-    NSString *urlstr = @"http://image.baidu.com/data/imgs?col=%E7%BE%8E%E5%A5%B3&tag=%E5%B0%8F%E6%B8%85%E6%96%B0&sort=0&pn=0&rn=20&p=channel&from=1";
+    NSString *urlstr = [NSString stringWithFormat:@"http://image.baidu.com/data/imgs?col=%@&tag=%@&sort=0&pn=0&rn=20&p=channel&from=1",_colName,_tagName];
+    urlstr = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
    [AFNetworkingTools requestWithType:HttpRequestTypeGet withUrlString:urlstr withParameters:nil withSuccessBlock:^(NSDictionary *object) {
 //       NSLog(@"Images:%@",object);
        
@@ -113,6 +132,7 @@ static NSString *const headerView = @"headerView";
 
 -(void) fetchData:(NSDictionary *) object {
     NSArray *response = object[@"imgs"];
+    [_itemsArray removeAllObjects];
     for (int i = 0; i < 20; i ++) {
         PhotoModel *photo = [[PhotoModel alloc] init];
         NSDictionary *result = response[i];
@@ -135,10 +155,27 @@ static NSString *const headerView = @"headerView";
         NSLog(@"thumbnailUrl:%@",photo.thumbnailUrl);
         [self.itemsArray addObject:photo];
 
-    }
+   }
     
     
     [self.collectionVeiw reloadData];
+}
+
+-(void) selectedTopic:(UIButton *) btn {
+    
+    [_collectionVeiw setContentOffset:CGPointMake(0, topNavScrollBarHeight)];
+    NSUInteger index = btn.tag - 200;
+    if (index == 0) {
+        _colName = _topNavItems[0];
+        _tagName = @"小清新";
+    }else {
+        _colName = _topNavItems[index];
+        _tagName = @"全部";
+    }
+    
+    [self requestData];
+    [_topNavScrollBar setCurrentItemIndex:index];
+    
 }
 
 

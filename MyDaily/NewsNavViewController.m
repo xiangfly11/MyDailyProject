@@ -14,21 +14,31 @@
 #import "NewsViewController.h"
 
 
-
+// URL to request top carousel images
 static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T1348647853363/0-10.html";
 
 
 @interface NewsNavViewController ()<UIScrollViewDelegate> {
     TopCarouselView *_topCarouselView;
     TopNavScrollBar *_topNavScrollBar;
+    
+    //scroll view which will contain different categories of news
     UIScrollView *_mainView;
+    
+    //index to indicate which kind of news is selected
     NSInteger _currentItemIndex;
 }
 
-@property (nonatomic,strong) NSMutableArray *topNewsArr;
+// a set of TopNewsImageModel objects 
+@property (nonatomic,strong) NSMutableArray *topImagesArr;
+
+// a set of titles of news
 @property (nonatomic,strong) NSArray *topButtonTitles;
-@property (nonatomic,strong) NSMutableArray *viewsArray;
+
+// a set of view controllers to show different categories of news
 @property (nonatomic,strong) NSArray *subViewControllers;
+
+// a set of NSString to indicate diffent content in different news categories
 @property (nonatomic,strong) NSArray *contentArr;
 @end
 
@@ -38,10 +48,7 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    
-//    [self requestFromServer];
     [self initController];
-//    [self viewConfig];
     
     //figure out scroll view content offset (-20)
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -58,10 +65,9 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
 }
 
 -(void) initController {
-    _viewsArray = [[NSMutableArray alloc] init];
     _topButtonTitles = @[@"头条",@"国内",@"国际",@"娱乐",@"体育",@"科技",@"奇闻趣事",@"生活健康"];
     _contentArr = @[@"guonei",@"world",@"huabian",@"tiyu",@"keji",@"qiwen",@"health"];
-    _topNewsArr = [NSMutableArray array];
+    _topImagesArr = [NSMutableArray array];
     _subViewControllers = [NSArray array];
     [self requestDataWithUrlStr: urlStr];
 }
@@ -69,7 +75,7 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
 -(void) createTopViews {
     _topCarouselView = [[TopCarouselView alloc] initWithFrame:CGRectMake(0, navigationBarHeight, kScreenWidth, topCarouselViewHeight)];
   
-    [_topCarouselView setTopNews:self.topNewsArr];
+    [_topCarouselView setTopNews:self.topImagesArr];
     [self.view addSubview:_topCarouselView];
     
     _topNavScrollBar = [[TopNavScrollBar alloc] initWithFrame:CGRectMake(0, topCarouselViewHeight + navigationBarHeight, kScreenWidth, topScrollButtonsViewHeight)];
@@ -129,7 +135,7 @@ static NSString *const urlStr = @"http://c.m.163.com/nc/article/headline/T134864
     NSArray *response = [TopNewsImageModel mj_objectArrayWithKeyValuesArray:object[@"T1348647853363"][0][@"ads"]];
     
     for (TopNewsImageModel *news in response) {
-        [self.topNewsArr addObject:news];
+        [self.topImagesArr addObject:news];
     }
     
     [self createTopViews];
