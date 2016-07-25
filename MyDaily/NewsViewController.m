@@ -173,7 +173,7 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsTableViewCell *cell = [NewsTableViewCell cellWithTableView:tableView];
-        [cell setNewsModel:self.newsArr[indexPath.row] withType:self.type];
+    [cell setNewsModel:self.newsArr[indexPath.row] withType:self.type];
     
     return cell;
 }

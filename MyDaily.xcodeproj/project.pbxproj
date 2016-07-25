@@ -14,6 +14,7 @@
 		70535B291D40C6530048F42A /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B281D40C6530048F42A /* MediaViewController.m */; };
 		70535B2C1D40CACA0048F42A /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B2B1D40CACA0048F42A /* CustomNavigationBar.m */; };
 		70535B301D41B2E20048F42A /* DVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B2F1D41B2E20048F42A /* DVSwitch.m */; };
+		70535B361D45C23D0048F42A /* CustomVideoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70535B351D45C23D0048F42A /* CustomVideoTableCell.m */; };
 		707CAA6A1D223205002CCE9D /* TopNewsImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAA691D223205002CCE9D /* TopNewsImageModel.m */; };
 		707CAABC1D22A79E002CCE9D /* NewsNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAABB1D22A79E002CCE9D /* NewsNavViewController.m */; };
 		707CAAC31D22C6E5002CCE9D /* AFNetworkingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CAAC21D22C6E5002CCE9D /* AFNetworkingTools.m */; };
@@ -85,6 +86,8 @@
 		70535B2B1D40CACA0048F42A /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 		70535B2E1D41B2E20048F42A /* DVSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSwitch.h; sourceTree = "<group>"; };
 		70535B2F1D41B2E20048F42A /* DVSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSwitch.m; sourceTree = "<group>"; };
+		70535B341D45C23D0048F42A /* CustomVideoTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomVideoTableCell.h; sourceTree = "<group>"; };
+		70535B351D45C23D0048F42A /* CustomVideoTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomVideoTableCell.m; sourceTree = "<group>"; };
 		707CAA661D223041002CCE9D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		707CAA681D223205002CCE9D /* TopNewsImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNewsImageModel.h; sourceTree = "<group>"; };
 		707CAA691D223205002CCE9D /* TopNewsImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNewsImageModel.m; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				70A16D4B1D3E1F41004BC064 /* PhotoCell.xib */,
 				70535B2A1D40CACA0048F42A /* CustomNavigationBar.h */,
 				70535B2B1D40CACA0048F42A /* CustomNavigationBar.m */,
+				70535B341D45C23D0048F42A /* CustomVideoTableCell.h */,
+				70535B351D45C23D0048F42A /* CustomVideoTableCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				70FACA3A1D2122EB00536665 /* TopImageView.m in Sources */,
 				70A16D541D3F256B004BC064 /* UIView+DOPExtension.m in Sources */,
 				70D935501D2DFBFB0037F73F /* TopButtonsTitleModel.m in Sources */,
+				70535B361D45C23D0048F42A /* CustomVideoTableCell.m in Sources */,
 				707CAABC1D22A79E002CCE9D /* NewsNavViewController.m in Sources */,
 				707CAAC31D22C6E5002CCE9D /* AFNetworkingTools.m in Sources */,
 				70F88A5C1D3C893100990A29 /* CustomTabBarController.m in Sources */,
