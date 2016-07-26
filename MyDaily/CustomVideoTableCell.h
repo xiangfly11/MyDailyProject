@@ -12,7 +12,7 @@
 @interface CustomVideoTableCell : UITableViewCell
 
 @property (nonatomic,strong) VideoModel *videoModel;
-@property (nonatomic,assign) CGFloat cellHeight;
+@property (nonatomic,assign,readonly) CGFloat cellHeight;
 
 +(instancetype) cellWithTableView:(UITableView *) tableView;
 

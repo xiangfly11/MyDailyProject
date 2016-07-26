@@ -68,8 +68,8 @@
     [self setupChildViewController:newsController title:@"新闻" imageName:@"tabbar_news" selectedImage:@"tabbar_news_hl"];
     MediaViewController *mediaController = [[MediaViewController alloc] init];
     [self setupChildViewController:mediaController title:@"媒体" imageName:@"tabbar_picture" selectedImage:@"tabbar_picture_hl"];
-    VideoViewController *videoController = [[VideoViewController alloc] init];
-    [self setupChildViewController:videoController title:@"视频" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl" ];
+//    VideoViewController *videoController = [[VideoViewController alloc] init];
+//    [self setupChildViewController:videoController title:@"视频" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl" ];
     SettingViewController *settingController = [[SettingViewController alloc] init];
     [self setupChildViewController:settingController title:@"设置" imageName:@"tabbar_setting"  selectedImage:@"tabbar_setting_hl"];
     
@@ -79,12 +79,12 @@
 -(void)setupChildViewController:(UIViewController *)childVc title:(NSString *)title imageName:(NSString *)imageName selectedImage:(NSString *)selectedImage
 {
     
-    //设置控制器属性
+    //set tab bar proerty
     childVc.title = title;
     childVc.tabBarItem.image = [UIImage imageNamed:imageName];
     childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    //包装一个导航控制器
+    //create customer navigation view controller
     CustomNavigationViewController *nav = [[CustomNavigationViewController alloc]initWithRootViewController:childVc];
     [self addChildViewController:nav];
     

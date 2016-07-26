@@ -57,7 +57,7 @@
 
 
 -(void) createViews {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 90)];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 110)];
 //    UITableView *tableView = [[UITableView alloc] init];
 //    tableView.frame = self.view.frame;
     tableView.dataSource = self;
@@ -137,10 +137,11 @@
     self.playerViewController = [[AVPlayerViewController alloc] init];
 
     self.playerViewController.player = player;
-    CGFloat viewY = 30;
+//    CGFloat viewY = 30;
     CGFloat cellHeight = [_cellHeightArr[indexPath.row] floatValue];
     NSInteger index = indexPath.row;
-    self.playerViewController.view.frame = CGRectMake(0, cellHeight * index + viewY, kScreenWidth, kScreenWidth * 0.56);
+    CGFloat playViewOffset = 50.0;
+    self.playerViewController.view.frame = CGRectMake(10, cellHeight * index + playViewOffset, kScreenWidth  - 20, kScreenWidth * 0.56);
     [self.tableView addSubview:self.playerViewController.view];
     [self.playerViewController.player play];
     self.isPlayed = YES;
