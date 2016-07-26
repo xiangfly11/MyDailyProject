@@ -30,6 +30,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) viewDidDisappear:(BOOL)animated {
+    [self.webVeiw removeFromSuperview];
+    self.webVeiw = nil;
+}
+
 
 -(void) initController {
     

@@ -8,11 +8,17 @@
 
 #import "VideoViewController.h"
 #import "CustomVideoTableCell.h"
+#import "VideoModel.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
 
 @interface VideoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
-
-
+@property (nonatomic,strong) NSMutableArray *itemsArr;
+@property (nonatomic,strong) AVPlayerViewController *playerViewController;
+@property (nonatomic,strong) NSMutableArray *cellHeightArr;
+@property (nonatomic,assign) BOOL isPlayed;
+@property (nonatomic,strong) AVPlayer *player;
 @end
 
 @implementation VideoViewController
@@ -27,7 +33,10 @@
     
     [self initController];
     [self createViews];
+    [self requestData];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -35,23 +44,54 @@
 }
 
 
+//-(void) viewDidDisappear:(BOOL)animated {
+//    [self.playerViewController.view removeFromSuperview];
+//}
+
 -(void) initController {
+    _itemsArr = [NSMutableArray array];
+    _cellHeightArr = [NSMutableArray array];
+    _isPlayed = NO;
     
 }
 
 
 -(void) createViews {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 120)];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 90)];
 //    UITableView *tableView = [[UITableView alloc] init];
-    tableView.frame = self.view.frame;
+//    tableView.frame = self.view.frame;
     tableView.dataSource = self;
     tableView.delegate = self;
     self.tableView = tableView;
     [self.view addSubview:tableView];
-    [tableView reloadData];
+//    [tableView reloadData];
     
 }
 
+
+-(void) requestData {
+    NSString *url = @"http://c.m.163.com/nc/video/home/0-10.html";
+    [AFNetworkingTools requestWithType:HttpRequestTypeGet withUrlString:url withParameters:nil withSuccessBlock:^(NSDictionary *object) {
+        [self fetchData:object];
+    } withFailureBlock:^(NSError *error) {
+        NSLog(@"Error:%@",error.description);
+    } progress:nil];
+}
+
+
+-(void) fetchData:(NSDictionary *) object {
+    NSArray *dataArr = object[@"videoList"];
+    for (NSDictionary *dict in dataArr) {
+        VideoModel *videoModel = [[VideoModel alloc] init];
+        videoModel.cover = dict[@"cover"];
+        videoModel.videoSource = dict[@"videosource"];
+        videoModel.descriptionStr = dict[@"description"];
+        videoModel.mp4_url = dict[@"mp4_url"];
+        [self.itemsArr addObject:videoModel];
+    }
+    
+    [self.tableView reloadData];
+}
 
 
 #pragma mark -- UITableViewDataSource & UITableViewDelegate
@@ -60,17 +100,73 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.itemsArr.count;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomVideoTableCell *cell = [CustomVideoTableCell cellWithTableView:tableView];
-    
+    [cell setVideoModel:self.itemsArr[indexPath.row]];
+    [self.cellHeightArr addObject:[NSNumber numberWithFloat:cell.cellHeight]];
     return cell;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  160;
+    CustomVideoTableCell *cell = [CustomVideoTableCell cellWithTableView:tableView];
+    [cell setVideoModel:self.itemsArr[indexPath.row]];
+    return cell.cellHeight;
+    
+//    return [self.cellHeightArr[indexPath.row] floatValue];
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AVPlayer *player;
+    if (_isPlayed  == NO) {
+        VideoModel *videoModel = self.itemsArr[indexPath.row];
+        NSURL *url = [NSURL URLWithString:videoModel.mp4_url];
+        player = [AVPlayer playerWithURL:url];
+        self.player = player;
+    }else {
+        [self.player pause];
+        [self.playerViewController.view removeFromSuperview];
+        self.playerViewController = nil;
+        VideoModel *videoModel = self.itemsArr[indexPath.row];
+        NSURL *url = [NSURL URLWithString:videoModel.mp4_url];
+        player = [AVPlayer playerWithURL:url];
+    }
+    
+    self.playerViewController = [[AVPlayerViewController alloc] init];
+
+    self.playerViewController.player = player;
+    CGFloat viewY = 30;
+    CGFloat cellHeight = [_cellHeightArr[indexPath.row] floatValue];
+    NSInteger index = indexPath.row;
+    self.playerViewController.view.frame = CGRectMake(0, cellHeight * index + viewY, kScreenWidth, kScreenWidth * 0.56);
+    [self.tableView addSubview:self.playerViewController.view];
+    [self.playerViewController.player play];
+    self.isPlayed = YES;
+    
+}
+
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.playerViewController) {
+        if (fabs(scrollView.contentOffset.y)+64 > CGRectGetMaxY(self.playerViewController.view.frame)) {
+            
+            [self.playerViewController.player pause];
+            [self.playerViewController.view removeFromSuperview];
+            self.playerViewController = nil;
+            self.isPlayed = NO;
+            
+            //            [self setupSmallmpc];
+            
+        }else{
+            //            NSLog(@"hahah");
+            //                        self.smallmpc = NO;
+            //                        VideoDataFrame *videoframe = self.videoArray[self.currtRow];
+            //                        self.mpc.view.frame = CGRectMake(0, videoframe.cellH*self.currtRow+videoframe.coverF.origin.y, SCREEN_WIDTH, videoframe.coverF.size.height);
+            //                        [self.tableview addSubview:self.mpc.view];
+        }
+    }
 }
 
 /*
