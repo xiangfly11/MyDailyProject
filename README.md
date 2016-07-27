@@ -17,6 +17,22 @@
 3, Fix Bugs:  add refresh/ load more features, Fix scroll navigation bar hightlight issue
 
 ### Show you the App
+![MyDaily](https://github.com/xiangfly11/Images/blob/master/MyDailyDemo1.gif)
+
+### How to contace me?
+I am pleasure if you want to contact me and I want to have more freiends who have same goal. 
+
+[简书](http://www.jianshu.com/users/716b5a11a8d5/latest_articles)
+
+QQ:401169638
+
+And you can also get more information about this project from my blog:[MyDaily](http://www.jianshu.com/p/5bba5a9be2ba)
+
+### What do I hope?
+I hope this project can help me and others, who are interested in iOS development, have a good demo to improve our developing ability. And this project let me more faimiliar with Cocoa Touch Framwrok and Objective-C language. 
+
+### License
+MyDaily is available under MIT License.
 
 
 
