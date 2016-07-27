@@ -170,6 +170,10 @@
     }
 }
 
+
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [CustomVideoTableCell appearCell:cell andScale:0.5];
+}
 /*
 #pragma mark - Navigation
 

@@ -39,23 +39,13 @@ static const CGFloat padding = 5;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     CGFloat backGroundViewHeight = 260;
     if (self) {
-//        UIView *view = [[UIView alloc] initWithFrame: CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight)];
-//        [view setBackgroundColor:[UIColor colorWithRed:132.0/255.0 green:208.0/255.0 blue:207.0/255.0 alpha:0.7]];
-        UIView *view = [[UIView alloc] init];
+        UIView *view = [[UIView alloc] initWithFrame: CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight)];
         [view setBackgroundColor:[UIColor darkGrayColor]];
         view.layer.cornerRadius = 10;
         [self.contentView addSubview:view];
         self.background = view;
         
-//        [self.contentView setBackgroundColor:[UIColor colorWithRed:221.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:0.8]];
-        [self.contentView setBackgroundColor:[UIColor lightGrayColor]];
-        
-//        view.layer.cornerRadius = 10;
-//        self.backgroundView = view;
-//        self.contentView.frame = CGRectMake(0, 0, kScreenWidth - 20, 340);
-//        [self.contentView addSubview:view];
-//        self.contentView.backgroundColor = [UIColor redColor];
-//        view.backgroundColor = [UIColor lightGrayColor];
+        [self.contentView setBackgroundColor:[UIColor whiteColor]];
         
         CGFloat titleX = padding;
         CGFloat titleY = padding * 2;
@@ -65,7 +55,6 @@ static const CGFloat padding = 5;
         self.titleLable = titleLabel;
         [self.titleLable setTextColor:[UIColor lightGrayColor]];
         [self.background addSubview: titleLabel];
-//
         CGFloat coverImageViewY = titleY + titleHeight;
         CGFloat coverImageVeiwHeight = kScreenWidth * 0.56;
         UIImageView *coverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, coverImageViewY , kScreenWidth - 20,coverImageVeiwHeight)];
@@ -85,14 +74,14 @@ static const CGFloat padding = 5;
         
         self.cellHeight = backGroundViewHeight + 20;
         
-        self.background.frame = CGRectMake(0, 0, -(kScreenWidth - 20), backGroundViewHeight);
+//        self.background.frame = CGRectMake(0, 0, -(kScreenWidth - 20), backGroundViewHeight);
 //        [UIView animateWithDuration:1.5 animations:^{
 //            self.background.frame = CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight);
 //        }];
         
-        [UIView animateWithDuration:1.5 delay:0.5 usingSpringWithDamping:30 initialSpringVelocity:15 options:0 animations:^{
-            self.background.frame = CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight);
-        } completion:nil];
+//        [UIView animateWithDuration:1.5 delay:0.5 usingSpringWithDamping:30 initialSpringVelocity:15 options:0 animations:^{
+//            self.background.frame = CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight);
+//        } completion:nil];
     }
     
     return self;
@@ -105,4 +94,19 @@ static const CGFloat padding = 5;
     self.desLabel.text = videoModel.descriptionStr;
 }
 
+
++ (void)appearCell:(UITableViewCell *)cell andScale:(CGFloat)scale
+{
+    CATransform3D rotate = CATransform3DMakeScale(0, scale, scale);
+    cell.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    cell.layer.transform = rotate;
+    [UIView beginAnimations:@"scale" context:nil];
+    [UIView setAnimationDuration:0.8];
+    cell.layer.transform = CATransform3DIdentity;
+    cell.alpha = 1;
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    [UIView commitAnimations];
+}
 @end

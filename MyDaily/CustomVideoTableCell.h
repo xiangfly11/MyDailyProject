@@ -17,4 +17,6 @@
 +(instancetype) cellWithTableView:(UITableView *) tableView;
 
 -(void) setVideoModel:(VideoModel *)videoModel;
+
++(void)appearCell:(UITableViewCell *)cell andScale:(CGFloat)scale;
 @end

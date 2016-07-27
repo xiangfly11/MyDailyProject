@@ -197,6 +197,96 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7002E7531D48650600D99432 /* NewsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				70535B241D407D5E0048F42A /* NewsDetailViewController.h */,
+				70535B251D407D5E0048F42A /* NewsDetailViewController.m */,
+				707CAABA1D22A79E002CCE9D /* NewsNavViewController.h */,
+				707CAABB1D22A79E002CCE9D /* NewsNavViewController.m */,
+				704323D81D333EF3003CCC25 /* NewsViewController.h */,
+				704323D91D333EF3003CCC25 /* NewsViewController.m */,
+			);
+			name = NewsViewControllers;
+			sourceTree = "<group>";
+		};
+		7002E7541D48654B00D99432 /* MediaViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				70535B271D40C6530048F42A /* MediaViewController.h */,
+				70535B281D40C6530048F42A /* MediaViewController.m */,
+				70C8B5071D3F324500BA6D80 /* PhotoViewController.h */,
+				70C8B5081D3F324500BA6D80 /* PhotoViewController.m */,
+				70F88A5D1D3CB31A00990A29 /* VideoViewController.h */,
+				70F88A5E1D3CB31A00990A29 /* VideoViewController.m */,
+				70F88A601D3CB33000990A29 /* GalleryViewController.h */,
+				70F88A611D3CB33000990A29 /* GalleryViewController.m */,
+			);
+			name = MediaViewControllers;
+			sourceTree = "<group>";
+		};
+		7002E7551D48659200D99432 /* SettingViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				70F88A631D3CB35800990A29 /* SettingViewController.h */,
+				70F88A641D3CB35800990A29 /* SettingViewController.m */,
+			);
+			name = SettingViewControllers;
+			sourceTree = "<group>";
+		};
+		7002E7561D48661200D99432 /* NewsModels */ = {
+			isa = PBXGroup;
+			children = (
+				707CAA681D223205002CCE9D /* TopNewsImageModel.h */,
+				707CAA691D223205002CCE9D /* TopNewsImageModel.m */,
+				70D9354E1D2DFBFB0037F73F /* TopButtonsTitleModel.h */,
+				70D9354F1D2DFBFB0037F73F /* TopButtonsTitleModel.m */,
+				70F88A461D37337300990A29 /* NewsModel.h */,
+				70F88A471D37337300990A29 /* NewsModel.m */,
+			);
+			name = NewsModels;
+			sourceTree = "<group>";
+		};
+		7002E7571D48663300D99432 /* MediaModels */ = {
+			isa = PBXGroup;
+			children = (
+				70A16D411D3E1B7E004BC064 /* PhotoModel.h */,
+				70A16D421D3E1B7E004BC064 /* PhotoModel.m */,
+				70535B371D465D7A0048F42A /* VideoModel.h */,
+				70535B381D465D7A0048F42A /* VideoModel.m */,
+			);
+			name = MediaModels;
+			sourceTree = "<group>";
+		};
+		7002E7581D48666400D99432 /* NewsViews */ = {
+			isa = PBXGroup;
+			children = (
+				70FACA381D2122EB00536665 /* TopImageView.h */,
+				70FACA391D2122EB00536665 /* TopImageView.m */,
+				70FACA3B1D21232D00536665 /* TopImageView.xib */,
+				70FACA421D21255E00536665 /* TopCarouselView.h */,
+				70FACA431D21255E00536665 /* TopCarouselView.m */,
+				70FACA451D21257B00536665 /* TopCarouselView.xib */,
+				704323D21D31FD0B003CCC25 /* TopNavScrollBar.h */,
+				704323D31D31FD0B003CCC25 /* TopNavScrollBar.m */,
+				70F88A4E1D374B2700990A29 /* NewsTableViewCell.h */,
+				70F88A4F1D374B2700990A29 /* NewsTableViewCell.m */,
+			);
+			name = NewsViews;
+			sourceTree = "<group>";
+		};
+		7002E7591D48669600D99432 /* MediaVeiws */ = {
+			isa = PBXGroup;
+			children = (
+				70A16D491D3E1F41004BC064 /* PhotoCell.h */,
+				70A16D4A1D3E1F41004BC064 /* PhotoCell.m */,
+				70A16D4B1D3E1F41004BC064 /* PhotoCell.xib */,
+				70535B341D45C23D0048F42A /* CustomVideoTableCell.h */,
+				70535B351D45C23D0048F42A /* CustomVideoTableCell.m */,
+			);
+			name = MediaVeiws;
+			sourceTree = "<group>";
+		};
 		704323CB1D31F8FE003CCC25 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,16 +308,8 @@
 		707CAA671D2231C7002CCE9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				707CAA681D223205002CCE9D /* TopNewsImageModel.h */,
-				707CAA691D223205002CCE9D /* TopNewsImageModel.m */,
-				70D9354E1D2DFBFB0037F73F /* TopButtonsTitleModel.h */,
-				70D9354F1D2DFBFB0037F73F /* TopButtonsTitleModel.m */,
-				70F88A461D37337300990A29 /* NewsModel.h */,
-				70F88A471D37337300990A29 /* NewsModel.m */,
-				70A16D411D3E1B7E004BC064 /* PhotoModel.h */,
-				70A16D421D3E1B7E004BC064 /* PhotoModel.m */,
-				70535B371D465D7A0048F42A /* VideoModel.h */,
-				70535B381D465D7A0048F42A /* VideoModel.m */,
+				7002E7571D48663300D99432 /* MediaModels */,
+				7002E7561D48661200D99432 /* NewsModels */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -235,27 +317,14 @@
 		707CAAB91D22A777002CCE9D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				70C8B50A1D3F6B4900BA6D80 /* CustomViewControllerTransition */,
-				707CAABA1D22A79E002CCE9D /* NewsNavViewController.h */,
-				707CAABB1D22A79E002CCE9D /* NewsNavViewController.m */,
-				704323D81D333EF3003CCC25 /* NewsViewController.h */,
-				704323D91D333EF3003CCC25 /* NewsViewController.m */,
+				7002E7551D48659200D99432 /* SettingViewControllers */,
+				7002E7541D48654B00D99432 /* MediaViewControllers */,
+				7002E7531D48650600D99432 /* NewsViewControllers */,
+				70C8B50A1D3F6B4900BA6D80 /* ThirdLibViewControllers */,
 				70F88A5A1D3C893100990A29 /* CustomTabBarController.h */,
 				70F88A5B1D3C893100990A29 /* CustomTabBarController.m */,
-				70F88A5D1D3CB31A00990A29 /* VideoViewController.h */,
-				70F88A5E1D3CB31A00990A29 /* VideoViewController.m */,
-				70F88A601D3CB33000990A29 /* GalleryViewController.h */,
-				70F88A611D3CB33000990A29 /* GalleryViewController.m */,
-				70F88A631D3CB35800990A29 /* SettingViewController.h */,
-				70F88A641D3CB35800990A29 /* SettingViewController.m */,
 				70F88A661D3CB3E300990A29 /* CustomNavigationViewController.h */,
 				70F88A671D3CB3E300990A29 /* CustomNavigationViewController.m */,
-				70C8B5071D3F324500BA6D80 /* PhotoViewController.h */,
-				70C8B5081D3F324500BA6D80 /* PhotoViewController.m */,
-				70535B241D407D5E0048F42A /* NewsDetailViewController.h */,
-				70535B251D407D5E0048F42A /* NewsDetailViewController.m */,
-				70535B271D40C6530048F42A /* MediaViewController.h */,
-				70535B281D40C6530048F42A /* MediaViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -289,7 +358,7 @@
 			name = DOPNavbarMenu;
 			sourceTree = "<group>";
 		};
-		70C8B50A1D3F6B4900BA6D80 /* CustomViewControllerTransition */ = {
+		70C8B50A1D3F6B4900BA6D80 /* ThirdLibViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				70C8B50B1D3F6BA800BA6D80 /* DropDownTransitionController.h */,
@@ -297,7 +366,7 @@
 				70C8B50E1D3F8C6600BA6D80 /* InteractionController.h */,
 				70C8B50F1D3F8C6600BA6D80 /* InteractionController.m */,
 			);
-			name = CustomViewControllerTransition;
+			name = ThirdLibViewControllers;
 			sourceTree = "<group>";
 		};
 		70EAA5B91D21132F00E4AA40 = {
@@ -375,29 +444,16 @@
 		70EAA5FB1D2116DD00E4AA40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7002E7581D48666400D99432 /* NewsViews */,
+				7002E7591D48669600D99432 /* MediaVeiws */,
 				70A16D4E1D3F2542004BC064 /* DOPNavbarMenu */,
 				70A16D3D1D3E103E004BC064 /* FlowLayout */,
-				70FACA381D2122EB00536665 /* TopImageView.h */,
-				70FACA391D2122EB00536665 /* TopImageView.m */,
-				70FACA3B1D21232D00536665 /* TopImageView.xib */,
-				70FACA421D21255E00536665 /* TopCarouselView.h */,
-				70FACA431D21255E00536665 /* TopCarouselView.m */,
-				70FACA451D21257B00536665 /* TopCarouselView.xib */,
-				704323D21D31FD0B003CCC25 /* TopNavScrollBar.h */,
-				704323D31D31FD0B003CCC25 /* TopNavScrollBar.m */,
-				70F88A4E1D374B2700990A29 /* NewsTableViewCell.h */,
-				70F88A4F1D374B2700990A29 /* NewsTableViewCell.m */,
 				70F88A541D38C77700990A29 /* TabBarButton.h */,
 				70F88A551D38C77700990A29 /* TabBarButton.m */,
 				70F88A571D3C804300990A29 /* TabBarView.h */,
 				70F88A581D3C804300990A29 /* TabBarView.m */,
-				70A16D491D3E1F41004BC064 /* PhotoCell.h */,
-				70A16D4A1D3E1F41004BC064 /* PhotoCell.m */,
-				70A16D4B1D3E1F41004BC064 /* PhotoCell.xib */,
 				70535B2A1D40CACA0048F42A /* CustomNavigationBar.h */,
 				70535B2B1D40CACA0048F42A /* CustomNavigationBar.m */,
-				70535B341D45C23D0048F42A /* CustomVideoTableCell.h */,
-				70535B351D45C23D0048F42A /* CustomVideoTableCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
