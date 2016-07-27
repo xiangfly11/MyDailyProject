@@ -23,7 +23,6 @@ static const CGFloat padding = 5;
 
 +(instancetype) cellWithTableView:(UITableView *) tableView {
     static NSString *cellID = @"cell";
-//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     CustomVideoTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
@@ -42,8 +41,11 @@ static const CGFloat padding = 5;
         UIView *view = [[UIView alloc] initWithFrame: CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight)];
         [view setBackgroundColor:[UIColor darkGrayColor]];
         view.layer.cornerRadius = 10;
+        [view.layer setShadowOffset:CGSizeMake(5, 5)];
+        [view.layer setShadowColor:[UIColor lightGrayColor].CGColor];
         [self.contentView addSubview:view];
         self.background = view;
+        
         
         [self.contentView setBackgroundColor:[UIColor whiteColor]];
         
@@ -73,22 +75,13 @@ static const CGFloat padding = 5;
         [self.background addSubview:descLabel];
         
         self.cellHeight = backGroundViewHeight + 20;
-        
-//        self.background.frame = CGRectMake(0, 0, -(kScreenWidth - 20), backGroundViewHeight);
-//        [UIView animateWithDuration:1.5 animations:^{
-//            self.background.frame = CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight);
-//        }];
-        
-//        [UIView animateWithDuration:1.5 delay:0.5 usingSpringWithDamping:30 initialSpringVelocity:15 options:0 animations:^{
-//            self.background.frame = CGRectMake(10, 20, kScreenWidth - 20, backGroundViewHeight);
-//        } completion:nil];
-    }
+}
     
     return self;
 }
 
 -(void) setVideoModel:(VideoModel *)videoModel {
-//    self.videoModel = videoModel;
+
     self.titleLable.text = videoModel.videoSource;
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:videoModel.cover]];
     self.desLabel.text = videoModel.descriptionStr;

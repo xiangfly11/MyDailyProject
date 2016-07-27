@@ -151,7 +151,7 @@
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.playerViewController) {
-        if (fabs(scrollView.contentOffset.y)+64 > CGRectGetMaxY(self.playerViewController.view.frame)) {
+        if (fabs(scrollView.contentOffset.y) + 64 > CGRectGetMaxY(self.playerViewController.view.frame)) {
             
             [self.playerViewController.player pause];
             [self.playerViewController.view removeFromSuperview];
