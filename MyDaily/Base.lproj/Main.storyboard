@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="settingViewController" id="BYZ-38-t0r" customClass="SettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingViewController" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,37 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obD-eT-5cX">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ifl-X7-Yez">
-                                        <rect key="frame" x="234" y="20" width="132" height="82"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="132" id="txt-Bc-dhL"/>
-                                            <constraint firstAttribute="height" constant="82" id="yXa-Ft-voa"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="SJr-pO-REd"/>
-                                    <constraint firstItem="ifl-X7-Yez" firstAttribute="centerX" secondItem="obD-eT-5cX" secondAttribute="centerX" id="oXE-j4-eJd"/>
-                                    <constraint firstItem="ifl-X7-Yez" firstAttribute="top" secondItem="obD-eT-5cX" secondAttribute="top" constant="20" id="qYB-rE-ZDg"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="obD-eT-5cX" secondAttribute="trailing" id="20i-SF-wj7"/>
-                            <constraint firstItem="obD-eT-5cX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2jw-ws-Aaz"/>
-                            <constraint firstItem="obD-eT-5cX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LlM-tN-vsx"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="headerView" destination="obD-eT-5cX" id="BO0-sQ-vfF"/>
-                        <outlet property="photoImageVeiw" destination="ifl-X7-Yez" id="BjD-vI-eKZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

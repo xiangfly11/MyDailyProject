@@ -6,4 +6,5 @@ target:MyDaily do
     pod 'AFNetworking', '~> 3.0'
     pod 'MJExtension'
     pod 'MJRefresh'
+    pod 'MBProgressHUD'
 end

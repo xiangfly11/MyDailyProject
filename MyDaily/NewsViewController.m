@@ -63,36 +63,8 @@
     
     [self requestDataWithControl:refreshControl];
     
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
-//    
-//    // Enter the refresh status immediately
-//    [self.tableView.mj_header beginRefreshing];
-    
-    
 }
 
-
-
-//-(void) requestData {
-//    NSString *urlStr;
-//    if (self.content == nil) {
-//        urlStr = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/headline/T1348647853363/%ld-%ld.html",(long)_page,_currentPages];
-//        self.type = headlineNews;
-//    }else {
-//        urlStr = [NSString stringWithFormat:@"http://api.huceo.com/%@/other/?key=c32da470996b3fdd742fabe9a2948adb&num=%ld",self.content,_currentPages];
-//        self.type = otherNews;
-//    }
-//    
-//    
-//    [AFNetworkingTools requestWithType:HttpRequestTypeGet withUrlString:urlStr withParameters:nil withSuccessBlock:^(NSDictionary *object) {
-//        [self fetchData:object withType:self.type];
-////        [control endRefreshing];
-//    } withFailureBlock:^(NSError *error) {
-//        NSLog(@"Error:%@",error.localizedDescription);
-////        [control endRefreshing];
-//    } progress:nil];
-//
-//}
 
 
 -(void) requestDataWithControl:(UIRefreshControl *) control {
@@ -100,6 +72,7 @@
     if (self.content == nil) {
         urlStr = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/headline/T1348647853363/%ld-%ld.html",(long)_page,_currentPages];
         self.type = headlineNews;
+//        NSLog(@"%@",urlStr);
     }else {
         urlStr = [NSString stringWithFormat:@"http://api.huceo.com/%@/other/?key=c32da470996b3fdd742fabe9a2948adb&num=%ld",self.content,_currentPages];
         self.type = otherNews;
@@ -152,15 +125,6 @@
     
 }
 
-//-(void) updateData {
-//    [self requestData];
-//}
-
-//-(void) loadMoreData {
-//    _currentPages += _currentPages + 10;
-//    [self requestData];
-//    
-//}
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

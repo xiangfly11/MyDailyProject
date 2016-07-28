@@ -70,8 +70,10 @@
     [self setupChildViewController:mediaController title:@"媒体" imageName:@"tabbar_picture" selectedImage:@"tabbar_picture_hl"];
 //    VideoViewController *videoController = [[VideoViewController alloc] init];
 //    [self setupChildViewController:videoController title:@"视频" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl" ];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    SettingViewController *settingController = [storyboard instantiateViewControllerWithIdentifier:@"settingViewController" ];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    SettingViewController *settingController = [storyboard instantiateViewControllerWithIdentifier:@"settingViewController" ];
+    
+    SettingViewController *settingController = [[SettingViewController alloc] init];
     [self setupChildViewController:settingController title:@"设置" imageName:@"tabbar_setting"  selectedImage:@"tabbar_setting_hl"];
     
 }

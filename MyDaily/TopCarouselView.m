@@ -95,7 +95,7 @@
        
         topImageView.titleLabel.attributedText = titleStrAttr;
         topImageView.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [topImageView.titleLabel setTextColor:[UIColor grayColor]];
+        [topImageView.titleLabel setTextColor:[UIColor whiteColor]];
         
         [topImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)]];
         [topImageView setTag:i+100];
