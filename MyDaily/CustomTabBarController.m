@@ -14,6 +14,7 @@
 #import "GalleryViewController.h"
 #import "SettingViewController.h"
 #import "MediaViewController.h"
+#import "DailyInforViewController.h"
 
 @interface CustomTabBarController ()<TabBarViewDelegate>
 
@@ -68,11 +69,9 @@
     [self setupChildViewController:newsController title:@"新闻" imageName:@"tabbar_news" selectedImage:@"tabbar_news_hl"];
     MediaViewController *mediaController = [[MediaViewController alloc] init];
     [self setupChildViewController:mediaController title:@"媒体" imageName:@"tabbar_picture" selectedImage:@"tabbar_picture_hl"];
-//    VideoViewController *videoController = [[VideoViewController alloc] init];
-//    [self setupChildViewController:videoController title:@"视频" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl" ];
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    SettingViewController *settingController = [storyboard instantiateViewControllerWithIdentifier:@"settingViewController" ];
-    
+
+    DailyInforViewController *dailyInfroViewController = [[DailyInforViewController alloc] init];
+    [self setupChildViewController:dailyInfroViewController title:@"每日助手" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
     SettingViewController *settingController = [[SettingViewController alloc] init];
     [self setupChildViewController:settingController title:@"设置" imageName:@"tabbar_setting"  selectedImage:@"tabbar_setting_hl"];
     

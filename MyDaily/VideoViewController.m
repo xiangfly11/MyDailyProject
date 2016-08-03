@@ -27,10 +27,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 100, 50)];
-//    label.text = @"Hello";
-//    [self.view addSubview:label];
-    
     [self initController];
     [self createViews];
     [self requestData];
@@ -44,10 +40,6 @@
 }
 
 
-//-(void) viewDidDisappear:(BOOL)animated {
-//    [self.playerViewController.view removeFromSuperview];
-//}
-
 -(void) initController {
     _itemsArr = [NSMutableArray array];
     _cellHeightArr = [NSMutableArray array];
@@ -58,13 +50,10 @@
 
 -(void) createViews {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 110)];
-//    UITableView *tableView = [[UITableView alloc] init];
-//    tableView.frame = self.view.frame;
     tableView.dataSource = self;
     tableView.delegate = self;
     self.tableView = tableView;
     [self.view addSubview:tableView];
-//    [tableView reloadData];
     
 }
 
@@ -115,7 +104,6 @@
     [cell setVideoModel:self.itemsArr[indexPath.row]];
     return cell.cellHeight;
     
-//    return [self.cellHeightArr[indexPath.row] floatValue];
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -137,7 +125,6 @@
     self.playerViewController = [[AVPlayerViewController alloc] init];
 
     self.playerViewController.player = player;
-//    CGFloat viewY = 30;
     CGFloat cellHeight = [_cellHeightArr[indexPath.row] floatValue];
     NSInteger index = indexPath.row;
     CGFloat playViewOffset = 50.0;

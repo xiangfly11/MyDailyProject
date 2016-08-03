@@ -12,5 +12,6 @@
 +(instancetype) cellWithTableView:(UITableView *)tableView;
 
 @property (strong, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
 
 @end
