@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class PhotoModel;
+@class HotArticleModel;
 
 //typedef void(^ClickImageBlock)(Photo *photo);
 
@@ -18,5 +19,5 @@
 //@property (strong,nonatomic) ClickImageBlock block;
 
 -(void) setCellWithPhoto:(PhotoModel *) photo;
-
+-(void) setCellWithArticle:(HotArticleModel *) article;
 @end

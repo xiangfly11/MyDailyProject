@@ -20,7 +20,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BPc-JI-c4r">
-                        <rect key="frame" x="0.0" y="0.0" width="260" height="173"/>
+                        <rect key="frame" x="6" y="6" width="248" height="167"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -28,13 +28,23 @@
             <constraints>
                 <constraint firstItem="ZLr-LD-DTY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BLj-Zt-peq"/>
                 <constraint firstItem="ZLr-LD-DTY" firstAttribute="top" secondItem="BPc-JI-c4r" secondAttribute="bottom" id="JyM-sg-Y8J"/>
+                <constraint firstItem="BPc-JI-c4r" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="KbP-vd-2Fz"/>
                 <constraint firstAttribute="trailing" secondItem="ZLr-LD-DTY" secondAttribute="trailing" id="MrB-PO-s1x"/>
+                <constraint firstItem="BPc-JI-c4r" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="NN3-7g-UOg"/>
+                <constraint firstAttribute="trailing" secondItem="BPc-JI-c4r" secondAttribute="trailing" constant="6" id="R0M-IN-NI5"/>
                 <constraint firstAttribute="bottom" secondItem="ZLr-LD-DTY" secondAttribute="bottom" id="XhA-dx-sRk"/>
                 <constraint firstItem="BPc-JI-c4r" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Y9J-kk-OxU"/>
                 <constraint firstAttribute="trailing" secondItem="BPc-JI-c4r" secondAttribute="trailing" id="h2a-mR-au0"/>
                 <constraint firstItem="BPc-JI-c4r" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="z64-eA-VqM"/>
             </constraints>
             <size key="customSize" width="260" height="194"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Y9J-kk-OxU"/>
+                    <exclude reference="h2a-mR-au0"/>
+                    <exclude reference="z64-eA-VqM"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="imageView" destination="BPc-JI-c4r" id="H5F-ff-QB7"/>
                 <outlet property="titlelabel" destination="ZLr-LD-DTY" id="0SX-BI-9Wi"/>
