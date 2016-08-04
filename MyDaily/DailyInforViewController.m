@@ -17,6 +17,11 @@ static NSString *const cellID = @"myCell";
 @property (nonatomic,strong) NSArray *itemArr;
 @property (nonatomic,strong) UICollectionView *collectionView;
 
+@end
+@interface DailyInforViewController ()
+
+
+
 
 @end
 
@@ -39,10 +44,12 @@ static NSString *const cellID = @"myCell";
 -(void) initControlelr {
     _itemArr = @[@"",@"天气",@"股票",@"火车",@"航班",@"电影",@"汇率",@"金价"];
     
+
     
 }
 
 -(void) createViews {
+
     CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
     
     CircleLayout *layout = [[CircleLayout alloc ] init];
@@ -83,6 +90,9 @@ static NSString *const cellID = @"myCell";
     
 }
 
+
+
+    
 
 /*
 #pragma mark - Navigation

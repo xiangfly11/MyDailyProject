@@ -20,47 +20,31 @@
                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstAttribute="width" constant="177" id="h3k-9C-9Ta"/>
                             <constraint firstAttribute="width" constant="90" id="psL-Eg-hPy"/>
-                            <constraint firstAttribute="width" constant="97" id="uIj-cM-Zcn"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="h3k-9C-9Ta"/>
-                                <exclude reference="uIj-cM-Zcn"/>
-                            </mask>
-                        </variation>
                     </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nCu-l5-cG3">
+                        <rect key="frame" x="246" y="6" width="68" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="J3m-Gr-l4i"/>
+                        </constraints>
+                    </switch>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="yDR-1p-Kvp" secondAttribute="bottom" id="8NL-iz-EjU"/>
-                    <constraint firstItem="yDR-1p-Kvp" firstAttribute="top" secondItem="bXN-8R-zGp" secondAttribute="top" id="C3b-AV-fWh"/>
-                    <constraint firstAttribute="trailing" secondItem="yDR-1p-Kvp" secondAttribute="trailing" id="EPX-Mz-YwR"/>
-                    <constraint firstItem="yDR-1p-Kvp" firstAttribute="top" secondItem="bXN-8R-zGp" secondAttribute="top" id="GHW-cc-WO8"/>
-                    <constraint firstAttribute="bottom" secondItem="yDR-1p-Kvp" secondAttribute="bottom" id="OTl-iD-q04"/>
+                    <constraint firstAttribute="bottom" secondItem="nCu-l5-cG3" secondAttribute="bottom" constant="6" id="C9h-nr-KJZ"/>
+                    <constraint firstAttribute="trailing" secondItem="nCu-l5-cG3" secondAttribute="trailing" constant="8" id="RwO-j9-uig"/>
+                    <constraint firstItem="nCu-l5-cG3" firstAttribute="top" secondItem="bXN-8R-zGp" secondAttribute="top" constant="6" id="YuL-Ro-d1P"/>
                     <constraint firstAttribute="trailing" secondItem="yDR-1p-Kvp" secondAttribute="trailing" id="cFd-Jl-N33"/>
                     <constraint firstItem="yDR-1p-Kvp" firstAttribute="top" secondItem="bXN-8R-zGp" secondAttribute="top" id="cYH-HH-U0a"/>
-                    <constraint firstAttribute="bottom" secondItem="yDR-1p-Kvp" secondAttribute="bottom" id="fUs-iJ-JWg"/>
-                    <constraint firstItem="yDR-1p-Kvp" firstAttribute="centerX" secondItem="bXN-8R-zGp" secondAttribute="centerX" id="o1o-no-uq3"/>
-                    <constraint firstItem="yDR-1p-Kvp" firstAttribute="centerY" secondItem="bXN-8R-zGp" secondAttribute="centerY" id="vWo-1v-VEl"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="C3b-AV-fWh"/>
-                        <exclude reference="EPX-Mz-YwR"/>
-                        <exclude reference="GHW-cc-WO8"/>
-                        <exclude reference="OTl-iD-q04"/>
-                        <exclude reference="fUs-iJ-JWg"/>
-                        <exclude reference="o1o-no-uq3"/>
-                        <exclude reference="vWo-1v-VEl"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailLabel" destination="yDR-1p-Kvp" id="ozE-dG-ukT"/>
+                <outlet property="switchBtn" destination="nCu-l5-cG3" id="05E-y8-Qf0"/>
             </connections>
             <point key="canvasLocation" x="391" y="400"/>
         </tableViewCell>

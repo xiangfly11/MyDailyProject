@@ -14,8 +14,11 @@
 #import "GalleryViewController.h"
 #import "SettingViewController.h"
 #import "MediaViewController.h"
+
 //#import "DailyInforViewController.h"
 #import "HotArticlesViewController.h"
+#import "DailyInforViewController.h"
+
 
 @interface CustomTabBarController ()<TabBarViewDelegate>
 
@@ -71,11 +74,16 @@
     MediaViewController *mediaController = [[MediaViewController alloc] init];
     [self setupChildViewController:mediaController title:@"媒体" imageName:@"tabbar_picture" selectedImage:@"tabbar_picture_hl"];
 //
+    DailyInforViewController *dailyInfroViewController = [[DailyInforViewController alloc] init];
+    [self setupChildViewController:dailyInfroViewController title:@"每日助手" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
+    
+    HotArticlesViewController *hotArticleViewController = [[HotArticlesViewController alloc] init];
+    [self setupChildViewController:hotArticleViewController title:@"热读" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
+
+//
 //    DailyInforViewController *dailyInfroViewController = [[DailyInforViewController alloc] init];
 //    [self setupChildViewController:dailyInfroViewController title:@"每日助手" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
-    
-    HotArticlesViewController *dailyInfroViewController = [[HotArticlesViewController alloc] init];
-    [self setupChildViewController:dailyInfroViewController title:@"热读" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
+
     SettingViewController *settingController = [[SettingViewController alloc] init];
     [self setupChildViewController:settingController title:@"设置" imageName:@"tabbar_setting"  selectedImage:@"tabbar_setting_hl"];
     

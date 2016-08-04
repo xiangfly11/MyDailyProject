@@ -160,6 +160,8 @@
             [cell.imageView setImage:[UIImage imageNamed:@"Services"]];
             cell.textLabel.text = @"设置";
             cell.textLabel.textColor = [UIColor lightGrayColor];
+            cell.detailLabel.hidden =YES;
+            cell.switchBtn.hidden = YES;
             break;
         }
 
@@ -169,6 +171,7 @@
             [cell.imageView setImage:[UIImage imageNamed:@"Change Theme"]];
             cell.textLabel.text = @"主题";
             cell.textLabel.textColor = [UIColor lightGrayColor];
+            cell.detailLabel.hidden = YES;
             
             break;
         }
@@ -178,6 +181,8 @@
             [cell.imageView setImage:[UIImage imageNamed:@"Feedback"]];
             cell.textLabel.text = @"反馈";
             cell.textLabel.textColor = [UIColor lightGrayColor];
+            cell.detailLabel.hidden = YES;
+            cell.switchBtn.hidden = YES;
             break;
         }
         case 3:
@@ -190,12 +195,11 @@
             [cell.detailLabel setTextColor:[UIColor redColor]];
             [cell.detailLabel setTextAlignment:NSTextAlignmentCenter];
             [cell.detailLabel setTextColor:[UIColor lightGrayColor]];
+            cell.switchBtn.hidden = YES;
             break;
         }
 
         default:
-            cell.textLabel.text = [NSString stringWithFormat:@"%ld",index];
-            cell.textLabel.textColor = [UIColor lightGrayColor];
             break;
     }
     
