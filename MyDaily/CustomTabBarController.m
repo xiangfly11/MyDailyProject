@@ -74,8 +74,8 @@
     MediaViewController *mediaController = [[MediaViewController alloc] init];
     [self setupChildViewController:mediaController title:@"媒体" imageName:@"tabbar_picture" selectedImage:@"tabbar_picture_hl"];
 //
-    DailyInforViewController *dailyInfroViewController = [[DailyInforViewController alloc] init];
-    [self setupChildViewController:dailyInfroViewController title:@"每日助手" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
+//    DailyInforViewController *dailyInfroViewController = [[DailyInforViewController alloc] init];
+//    [self setupChildViewController:dailyInfroViewController title:@"每日助手" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
     
     HotArticlesViewController *hotArticleViewController = [[HotArticlesViewController alloc] init];
     [self setupChildViewController:hotArticleViewController title:@"热读" imageName:@"tabbar_video"  selectedImage:@"tabbar_video_hl"];
