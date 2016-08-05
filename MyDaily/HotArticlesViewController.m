@@ -10,6 +10,7 @@
 #import "HotArticleModel.h"
 #import "PhotoCell.h"
 #import "HMWaterflowLayout.h"
+#import "HotArticleDetailViewController.h"
 
 
 static NSString *const cellID = @"photoCell";
@@ -79,7 +80,7 @@ static NSString *const cellID = @"photoCell";
 }
 
 -(void) requestData {
-    NSString *urlStr = @"http://news-at.zhihu.com/api/3/news/hot";
+    NSString *urlStr = @"http://v.juhe.cn/weixin/query?key=1339c5bd074c0e1ecb59a806003457b0";
     [AFNetworkingTools requestWithType:HttpRequestTypeGet withUrlString:urlStr withParameters:nil withSuccessBlock:^(NSDictionary *object) {
         [self fetchData:object];
     } withFailureBlock:^(NSError *error) {
@@ -88,11 +89,12 @@ static NSString *const cellID = @"photoCell";
 }
 
 -(void) fetchData:(NSDictionary *) object {
-    NSArray *result = object[@"recent"];
+    NSDictionary *dict = object[@"result"];
+    NSArray *result = dict[@"list"];
     for (NSDictionary *response in result) {
         HotArticleModel *model = [[HotArticleModel alloc] init];
         model.url = response[@"url"];
-        model.thumbnail = response[@"thumbnail"];
+        model.thumbnail = response[@"firstImg"];
         model.title = response[@"title"];
         
         [_articleArray addObject:model];
@@ -134,6 +136,11 @@ static NSString *const cellID = @"photoCell";
 }
 
 
+-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    HotArticleDetailViewController *detailVC = [[HotArticleDetailViewController alloc] init];
+    detailVC.articleModel = _articleArray[indexPath.item];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
 //-(CGFloat) waterflowLayout:(HMWaterflowLayout *)waterflowLayout heightForWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath {
 //    
