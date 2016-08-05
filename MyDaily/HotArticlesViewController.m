@@ -11,6 +11,7 @@
 #import "PhotoCell.h"
 #import "HMWaterflowLayout.h"
 #import "HotArticleDetailViewController.h"
+#import "AAPLCustomPresentationController.h"
 
 
 static NSString *const cellID = @"photoCell";
@@ -139,7 +140,15 @@ static NSString *const cellID = @"photoCell";
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     HotArticleDetailViewController *detailVC = [[HotArticleDetailViewController alloc] init];
     detailVC.articleModel = _articleArray[indexPath.item];
-    [self.navigationController pushViewController:detailVC animated:YES];
+//    [self.navigationController pushViewController:detailVC animated:YES];
+    
+    AAPLCustomPresentationController *presentationController NS_VALID_UNTIL_END_OF_SCOPE;
+    
+    presentationController = [[AAPLCustomPresentationController alloc] initWithPresentedViewController:detailVC presentingViewController:self];
+    
+    detailVC.transitioningDelegate = presentationController;
+    
+    [self presentViewController:detailVC animated:YES completion:NULL];
 }
 
 //-(CGFloat) waterflowLayout:(HMWaterflowLayout *)waterflowLayout heightForWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath {

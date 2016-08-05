@@ -6,12 +6,13 @@
 //  Copyright © 2016年 Jiaxiang Li. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
 #import "NewsDetailViewController.h"
 #import "NewsModel.h"
 
 @interface NewsDetailViewController ()
 
-@property (nonatomic,strong) UIWebView *webVeiw;
+//@property (nonatomic,strong) UIWebView *webVeiw;
 
 @end
 
@@ -31,20 +32,25 @@
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
-    [self.webVeiw removeFromSuperview];
-    self.webVeiw = nil;
+//    [self.webVeiw removeFromSuperview];
+//    self.webVeiw = nil;
 }
 
-
+-(void) dealloc {
+//    [self.webVeiw removeFromSuperview];
+//    self.webVeiw = nil;
+}
 -(void) initController {
     
 }
 
 -(void) createWebView {
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.news.url]];
+//    [webView loadRequest:request];
+//    self.webVeiw = webView;
+    
     [webView loadRequest:request];
-    self.webVeiw = webView;
     [self.view addSubview:webView];
 }
 
