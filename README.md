@@ -10,7 +10,7 @@
 ### What did I finish?
 1. News Section
 2. Media Section
-
+3. Caches Cleaning
 ### What will I do?
 1. Setting Section: log in/out, default theme, clean cache, feed back, share features
 2. Daily Help Section: weather, chat, may be have timer...
